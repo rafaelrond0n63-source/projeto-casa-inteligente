@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projeto Casa Inteligente | +300 Plantas Prontas em PDF</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #faf8f4;
+    --bg-card: #ffffff;
+    --bg-card-2: #f3efe7;
+    --border: #e8e2d8;
+    --text: #1a1a1a;
+    --text-muted: #6b7280;
+    --accent: #f2751e;
+    --accent-dark: #d9640f;
+    --green: #16a34a;
+    --card-shadow: 0 4px 16px rgba(20,20,10,.06);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.price,.headline{font-family:'Space Grotesk',sans-serif;}
+  .container{max-width:600px; margin:0 auto; padding:0 20px;}
+  img{max-width:100%; display:block; border-radius:12px;}
+  a{color:inherit; text-decoration:none;}
+
+  /* STICKY BAR */
+  .sticky-bar{
+    position:sticky; top:0; z-index:50;
+    background:var(--accent);
+    color:#ffffff;
+    text-align:center;
+    padding:10px 12px;
+    font-weight:700;
+    font-size:14px;
+  }
+  .sticky-bar span{font-family:'Space Grotesk',sans-serif;}
+
+  /* HERO */
+  .hero{padding:32px 0 24px;}
+  .hero-media{margin-top:20px;}
+  .badge{
+    display:inline-block;
+    background:var(--bg-card-2);
+    border:1px solid var(--border);
+    color:var(--accent);
+    font-size:12px;
+    font-weight:700;
+    padding:6px 12px;
+    border-radius:999px;
+    margin-bottom:16px;
+  }
+  .brand{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+    color:var(--text-muted); margin:18px 0 20px; opacity:.8;
+  }
+  .brand span{color:var(--text-muted); font-weight:600;}
+  .brand .brand-accent{color:var(--accent);}
+  .headline{font-size:36px; font-weight:800; line-height:1.1; margin-bottom:16px; letter-spacing:-.5px;}
+  .headline b{color:var(--accent); display:block; margin-bottom:2px;}
+  .subheadline{color:var(--text-muted); font-size:17px; margin-bottom:8px;}
+  .hero-img{margin-bottom:20px; border:1px solid var(--border);}
+
+  .cta-btn{
+    display:block;
+    width:100%;
+    background:var(--accent);
+    color:#ffffff;
+    font-weight:700;
+    font-size:17px;
+    text-align:center;
+    padding:16px 20px;
+    border-radius:12px;
+    border:none;
+    cursor:pointer;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .cta-btn:hover{background:var(--accent-dark); transform:translateY(-2px);}
+  .sub-cta{text-align:center; color:var(--text-muted); font-size:13px; margin-top:10px;}
+
+  .stats{
+    display:flex; align-items:center; gap:10px;
+    background:var(--bg-card); border:1px solid var(--border);
+    border-radius:12px; padding:14px 16px; margin-top:20px;
+    box-shadow:var(--card-shadow);
+  }
+  .stats .num{font-family:'Space Grotesk',sans-serif; font-weight:700; color:var(--accent); font-size:20px;}
+
+  /* SECTION GENERIC */
+  section{padding:32px 0;}
+  section h2{font-size:24px; margin-bottom:8px;}
+  section .section-sub{color:var(--text-muted); margin-bottom:20px; font-size:15px;}
+  .divider{height:1px; background:var(--border); margin:0;}
+
+  /* RESULTADOS REAIS */
+  .results-gallery{
+    display:flex; gap:12px; overflow-x:auto; margin:20px -20px 0; padding:4px 20px 8px;
+    -webkit-overflow-scrolling:touch; scrollbar-width:none;
+  }
+  .results-gallery::-webkit-scrollbar{display:none;}
+  .results-gallery img{
+    flex:0 0 78%;
+    height:220px; object-fit:cover; border-radius:14px;
+    box-shadow:var(--card-shadow);
+  }
+
+  /* DOR */
+  .pain-list{list-style:none; margin-bottom:16px;}
+  .pain-list li{
+    display:flex; gap:10px; align-items:flex-start;
+    background:var(--bg-card); border:1px solid var(--border);
+    border-radius:10px; padding:14px; margin-bottom:10px; font-size:15px;
+    box-shadow:var(--card-shadow);
+  }
+  .pain-list li .x{color:#ef4444; font-weight:700;}
+  .pain-close{font-weight:600; color:var(--text); font-size:16px; margin-top:14px;}
+
+  /* O QUE VOCE RECEBE */
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .grid-card{
+    background:var(--bg-card); border:1px solid var(--border);
+    border-radius:12px; padding:16px; transition:transform .15s ease, box-shadow .15s ease;
+    box-shadow:var(--card-shadow);
+  }
+  .grid-card:hover{transform:translateY(-3px); border-color:var(--accent);}
+  .grid-card .icon{font-size:24px; margin-bottom:8px;}
+  .grid-card h3{font-size:15px; margin-bottom:4px;}
+  .grid-card p{font-size:13px; color:var(--text-muted);}
+  .grid-card.has-photo{padding:0; overflow:hidden;}
+  .grid-card.has-photo .photo{
+    width:100%; height:90px; object-fit:cover; border-radius:0;
+    display:block; margin-bottom:0;
+  }
+  .grid-card.has-photo .card-body{padding:12px 14px 14px;}
+  .plant-collage{
+    display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr;
+    gap:2px; height:110px;
+  }
+  .plant-collage img{width:100%; height:100%; object-fit:cover; border-radius:0; display:block;}
+  .grid-card.has-photo .icon{
+    position:relative; top:-14px; margin-bottom:-8px;
+    background:var(--bg-card); border:1px solid var(--border);
+    width:28px; height:28px; border-radius:8px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:15px;
+  }
+
+  /* PROVA SOCIAL */
+  .testimonial{
+    background:var(--bg-card); border:1px solid var(--border);
+    border-radius:12px; padding:16px; margin-bottom:12px;
+    box-shadow:var(--card-shadow);
+  }
+  .testimonial.has-photo{padding:0; overflow:hidden;}
+  .testimonial.has-photo .photo{
+    width:100%; height:130px; object-fit:cover; border-radius:0; margin-bottom:0;
+  }
+  .testimonial.has-photo .card-body{padding:14px 16px 16px;}
+  .testimonial .stars{color:var(--accent); margin-bottom:8px; font-size:14px;}
+  .testimonial p{font-size:14px; margin-bottom:10px;}
+  .testimonial .author-row{display:flex; align-items:center; gap:10px; padding-top:10px; border-top:1px solid var(--border);}
+  .testimonial .avatar{
+    width:34px; height:34px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:14px;
+    color:#ffffff; flex-shrink:0;
+  }
+  .testimonial .avatar.avatar-img{padding:0; overflow:hidden; background:none;}
+  .testimonial .avatar.avatar-img img{
+    width:100%; height:100%; object-fit:cover; border-radius:50%; display:block;
+  }
+  .testimonial .author-info{line-height:1.3;}
+  .testimonial .author-name{font-size:13px; color:var(--green); font-weight:700;}
+  .testimonial .author{font-size:12px; color:var(--text-muted); font-weight:500;}
+
+  /* BONUS */
+  .bonus-card{
+    background:linear-gradient(135deg, var(--bg-card), var(--bg-card-2));
+    border:1px solid var(--accent); border-radius:12px;
+    padding:16px; margin-bottom:12px; position:relative;
+    box-shadow:var(--card-shadow);
+  }
+  .bonus-tag{
+    display:inline-block; background:var(--accent); color:#ffffff;
+    font-size:11px; font-weight:700; padding:3px 8px; border-radius:6px; margin-bottom:8px;
+  }
+  .bonus-card h3{font-size:16px; margin-bottom:4px;}
+  .bonus-card p{font-size:13px; color:var(--text-muted); margin-bottom:8px;}
+  .bonus-card .old-price{text-decoration:line-through; color:#6b7d90; font-size:13px;}
+  .bonus-total{
+    text-align:center; font-size:16px; font-weight:700; margin-top:16px;
+    padding:14px; background:var(--bg-card-2); border-radius:10px;
+  }
+  .bonus-total .free{color:var(--green);}
+
+  /* PRICING */
+  .plans{display:flex; flex-direction:column; gap:16px;}
+  .plan{
+    background:var(--bg-card); border:1px solid var(--border);
+    border-radius:16px; padding:20px; position:relative;
+    box-shadow:var(--card-shadow);
+  }
+  .plan.featured{border:2px solid var(--accent); background:var(--bg-card-2);}
+  .plan-badge{
+    position:absolute; top:-12px; left:50%; transform:translateX(-50%);
+    background:var(--accent); color:#ffffff; font-size:12px; font-weight:700;
+    padding:4px 14px; border-radius:999px; white-space:nowrap;
+  }
+  .plan h3{font-size:17px; margin-bottom:6px;}
+  .plan .anchor{color:#6b7d90; text-decoration:line-through; font-size:14px;}
+  .price{font-size:34px; font-weight:700; color:var(--accent); margin:4px 0 10px;}
+  .price small{font-size:15px; color:var(--text-muted); font-weight:500;}
+  .plan ul{list-style:none; margin-bottom:16px;}
+  .plan ul li{font-size:14px; padding:5px 0; color:var(--text-muted);}
+  .plan ul li b{color:var(--text); font-weight:600;}
+  .trust-badges{
+    display:flex; justify-content:center; gap:14px; margin-top:24px;
+    color:var(--text-muted); font-size:12px; flex-wrap:wrap;
+  }
+
+  /* GARANTIA */
+  .guarantee{
+    background:var(--bg-card); border:1px solid var(--green);
+    border-radius:16px; padding:24px; text-align:center;
+    box-shadow:var(--card-shadow);
+  }
+  .guarantee .seal{font-size:48px; margin-bottom:12px;}
+  .guarantee h2{color:var(--green); font-size:20px; margin-bottom:10px;}
+  .guarantee p{font-size:14px; color:var(--text-muted);}
+
+  /* FAQ */
+  .faq-item{border-bottom:1px solid var(--border); padding:14px 0;}
+  .faq-q{
+    display:flex; justify-content:space-between; align-items:center;
+    cursor:pointer; font-weight:600; font-size:15px;
+  }
+  .faq-q .arrow{transition:transform .2s ease; color:var(--accent);}
+  .faq-item.open .faq-q .arrow{transform:rotate(45deg);}
+  .faq-a{
+    max-height:0; overflow:hidden; transition:max-height .25s ease;
+    font-size:14px; color:var(--text-muted); padding-top:0;
+  }
+  .faq-item.open .faq-a{max-height:200px; padding-top:10px;}
+
+  /* CTA FINAL */
+  .final-cta{
+    background:linear-gradient(135deg, var(--bg-card-2), var(--bg-card));
+    border:1px solid var(--accent); border-radius:16px;
+    padding:24px; text-align:center;
+  }
+  .final-cta h2{font-size:22px; margin-bottom:10px;}
+  .final-cta p{color:var(--text-muted); font-size:14px; margin-bottom:18px;}
+
+  footer{padding:24px 0 40px; text-align:center; color:#5c6f83; font-size:12px;}
+  footer a{text-decoration:underline;}
+
+  /* POPUP DOWNSELL */
+  .overlay{
+    display:none; position:fixed; inset:0; background:rgba(0,0,0,.7);
+    z-index:100; align-items:center; justify-content:center; padding:20px;
+  }
+  .overlay.active{display:flex;}
+  .popup{
+    background:var(--bg-card); border:1px solid var(--accent);
+    border-radius:16px; padding:24px; max-width:400px; width:100%; text-align:center;
+  }
+  .popup h3{font-size:19px; margin-bottom:10px;}
+  .popup p{font-size:14px; color:var(--text-muted); margin-bottom:16px;}
+  .popup .close-popup{
+    display:block; margin-top:10px; color:var(--text-muted); font-size:13px; cursor:pointer;
+  }
+
+  @media(max-width:380px){
+    .grid{grid-template-columns:1fr 1fr;}
+    .headline{font-size:30px;}
+  }
+
+  /* DESKTOP */
+  @media(min-width:860px){
+    .container{max-width:900px;}
+
+    .hero{padding:56px 0 64px;}
+    .hero-media{margin-top:32px; text-align:center;}
+    .hero-media .hero-img{display:inline-block; max-width:520px;}
+    .headline{font-size:52px;}
+    .subheadline{font-size:19px;}
+
+    .results-gallery{margin:24px 0 0;}
+    .results-gallery img{flex:0 0 320px; height:220px;}
+
+    section{padding:48px 0;}
+    section h2{font-size:28px;}
+
+    .pain-list{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+    .pain-list li{margin-bottom:0;}
+
+    .grid{grid-template-columns:repeat(3, 1fr);}
+
+    .bonus-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+    .bonus-card{margin-bottom:0;}
+
+    .testimonials-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;}
+    .testimonial{margin-bottom:0;}
+
+    .plans{flex-direction:row; align-items:stretch;}
+    .plan{flex:1;}
+
+    .guarantee, .final-cta{padding:36px 48px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- 1. STICKY BAR -->
+<div class="sticky-bar">
+  🔥 OFERTA EXPIRA EM: <span id="timer">15:00</span>
+</div>
+
+<div class="container">
+
+  <!-- 2/3. HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <span class="badge">🎁 OFERTA EXCLUSIVA — SÓ HOJE</span>
+      <h1 class="headline"><b>+300 Plantas Profissionais</b> de Casas Prontas em PDF Pra Construir Sem Erro e Sem Gastar a Mais</h1>
+      <p class="subheadline">Projetos completos com visualização 3D, instalações elétricas, hidráulicas e estruturais — prontas pra baixar e imprimir agora. Tenha a segurança de um engenheiro na palma da sua mão.</p>
+      <div class="brand">🏠 <span>PROJETO</span> <b>CASA</b> <span class="brand-accent">INTELIGENTE</span></div>
+
+      <a href="#pricing" class="cta-btn">QUERO ACESSAR AS PLANTAS AGORA →</a>
+      <p class="sub-cta">Acesso imediato. Pagamento único. Sem mensalidade.</p>
+    </div>
+    <div class="hero-media">
+      <img class="hero-img" src="assets/hero.webp" alt="Projeto Casa Inteligente - mockup do produto">
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- 3.5 RESULTADOS REAIS -->
+  <section>
+    <h2 style="text-align:center;">Mais de <span style="color:var(--accent)">12.890 casas de campo</span> já foram construídas utilizando nossos projetos.</h2>
+    <div class="results-gallery">
+      <img src="assets/resultados/casa1.webp" alt="Casa de campo construída com nossos projetos">
+      <img src="assets/resultados/casa2.webp" alt="Casa de campo construída com nossos projetos">
+      <img src="assets/resultados/casa3.webp" alt="Casa de campo construída com nossos projetos">
+      <img src="assets/resultados/casa4.webp" alt="Casa de campo construída com nossos projetos">
+      <img src="assets/resultados/casa5.webp" alt="Casa de campo construída com nossos projetos">
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- 4. DOR -->
+  <section>
+    <h2>O Que "Construir no Improviso" Custa de Verdade</h2>
+    <p class="section-sub">Se você tá pensando em construir sem um projeto pronto, presta atenção nisso:</p>
+    <ul class="pain-list">
+      <li><span class="x">✗</span> Contratar um arquiteto do zero pode custar de R$1.500 a R$5.000 só pela planta</li>
+      <li><span class="x">✗</span> Um erro de medida na fundação vira retrabalho — e retrabalho custa caro</li>
+      <li><span class="x">✗</span> Construir sem projeto aprovado pode significar multa ou embargo da obra</li>
+      <li><span class="x">✗</span> Sem planejamento elétrico e hidráulico, a reforma depois de pronto sai 3x mais cara</li>
+    </ul>
+    <p class="pain-close">A verdade é que "economizar" no projeto é a forma mais cara de construir.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- 5. O QUE VOCE RECEBE -->
+  <section>
+    <h2>Tudo Isso Está no <span style="color:var(--green)">+300 Plantas de Casas</span></h2>
+    <p class="section-sub">Um arsenal técnico completo, desenvolvido pra tirar seu sonho do papel com a segurança de um engenheiro e a economia de quem planeja cada centavo.</p>
+    <div class="grid">
+      <div class="grid-card has-photo">
+        <img class="photo" src="assets/plantas/planta1.webp" alt="Catálogo de plantas">
+        <div class="card-body">
+          <div class="icon">📐</div>
+          <h3>Catálogo de Plantas</h3>
+          <p>+300 modelos, de casas rústicas a modernas</p>
+        </div>
+      </div>
+      <div class="grid-card has-photo">
+        <img class="photo" src="assets/grid/eletrico.webp" alt="Planta elétrica e hidráulica">
+        <div class="card-body">
+          <div class="icon">⚡</div>
+          <h3>Planta Baixa, Elétrica e Hidráulica</h3>
+          <p>3 plantas técnicas por modelo: medidas, pontos de luz e tubulação completa</p>
+        </div>
+      </div>
+      <div class="grid-card has-photo">
+        <img class="photo" src="assets/grid/render3d.webp" alt="Projeto 3D humanizado">
+        <div class="card-body">
+          <div class="icon">🧱</div>
+          <h3>Projeto 3D Humanizado</h3>
+          <p>Visualize cada cômodo em 3D fotorrealista antes de construir</p>
+        </div>
+      </div>
+      <div class="grid-card has-photo">
+        <img class="photo" src="assets/grid/terrea.webp" alt="Visualizador de fachadas">
+        <div class="card-body">
+          <div class="icon">🏠</div>
+          <h3>Visualizador de Fachadas</h3>
+          <p>Imagens realistas da casa pronta, antes do primeiro tijolo</p>
+        </div>
+      </div>
+      <div class="grid-card has-photo">
+        <img class="photo" src="assets/grid/hidraulico.webp" alt="Projeto estrutural">
+        <div class="card-body">
+          <div class="icon">🧮</div>
+          <h3>Estrutural Completo</h3>
+          <p>Cálculo técnico de fundações, pilares e vigas</p>
+        </div>
+      </div>
+      <div class="grid-card">
+        <div class="icon">🧾</div>
+        <h3>Calculadora de Insumos</h3>
+        <p>Lista quantitativa pra comprar exatamente o necessário, sem desperdício</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- 6. PROVA SOCIAL -->
+  <section>
+    <h2>Eles Também Tinham <span style="color:var(--accent)">Medo de Errar na Obra...</span></h2>
+    <p class="section-sub">Veja o que dizem proprietários que já construíram utilizando nossas plantas.</p>
+    <!-- DEPOIMENTOS: placeholder — trocar pelos depoimentos reais dos seus clientes assim que tiver -->
+    <div class="testimonials-grid">
+    <div class="testimonial has-photo">
+      <img class="photo" src="assets/grid/terrea.webp" alt="">
+      <div class="card-body">
+        <div class="stars">★★★★★</div>
+        <p>"Eu também tinha medo de errar na obra. Com a planta do Casa Inteligente pronta, meu pedreiro nem precisou de engenheiro pra começar."</p>
+        <div class="author-row">
+          <div class="avatar" style="background:#f59e0b;">R</div>
+          <div class="author-info">
+            <div class="author-name">Roberto S.</div>
+            <div class="author">Aposentado — Itaperuna, RJ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial has-photo">
+      <img class="photo" src="assets/grid/render3d.webp" alt="">
+      <div class="card-body">
+        <div class="stars">★★★★★</div>
+        <p>"Como engenheira, posso afirmar: a qualidade técnica é excepcional. Economizei uns R$3 mil que ia gastar com arquiteto."</p>
+        <div class="author-row">
+          <div class="avatar" style="background:#22c55e;">C</div>
+          <div class="author-info">
+            <div class="author-name">Camila F.</div>
+            <div class="author">Engenheira — Uberlândia, MG</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial has-photo">
+      <img class="photo" src="assets/grid/studio.webp" alt="">
+      <div class="card-body">
+        <div class="stars">★★★★★</div>
+        <p>"Comprei achando que ia ser só uma planta simples e vieram até o projeto elétrico e hidráulico. Muito mais completo do que eu esperava."</p>
+        <div class="author-row">
+          <div class="avatar" style="background:#38bdf8;">F</div>
+          <div class="author-info">
+            <div class="author-name">Fernanda A.</div>
+            <div class="author">Professora — Caxias do Sul, RS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial has-photo">
+      <img class="photo" src="assets/grid/terrea.webp" alt="">
+      <div class="card-body">
+        <div class="stars">★★★★☆</div>
+        <p>"Peguei o modelo de casa de campo e adaptei um pouco. Ficou exatamente como eu queria pro meu sítio."</p>
+        <div class="author-row">
+          <div class="avatar avatar-img"><img src="assets/avatares/adriano.webp" alt="Adriano M."></div>
+          <div class="author-info">
+            <div class="author-name">Adriano M.</div>
+            <div class="author">Produtor Rural — Ponta Grossa, PR</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial has-photo">
+      <img class="photo" src="assets/grid/render3d.webp" alt="">
+      <div class="card-body">
+        <div class="stars">★★★★★</div>
+        <p>"Já tinha comprado planta com engenheiro antes e demorou 3 semanas. Aqui foi na hora, e o guia de aprovação me ajudou a levar direto na prefeitura."</p>
+        <div class="author-row">
+          <div class="avatar" style="background:#a78bfa;">M</div>
+          <div class="author-info">
+            <div class="author-name">Marcos V.</div>
+            <div class="author">Aposentado — Feira de Santana, BA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- 7. BONUS -->
+  <section>
+    <h2>Bônus Exclusivos de Hoje</h2>
+    <p class="section-sub">Além das +300 plantas, você também leva:</p>
+
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <span class="bonus-tag">BÔNUS 1</span>
+        <h3>Checklist de Materiais de Construção</h3>
+        <p>Lista completa pra cotar com o fornecedor sem esquecer nada</p>
+        <span class="old-price">De R$47,00</span>
+      </div>
+
+      <div class="bonus-card">
+        <span class="bonus-tag">BÔNUS 2</span>
+        <h3>Planilha de Orçamento de Obra</h3>
+        <p>Controle quanto vai gastar em cada etapa da construção</p>
+        <span class="old-price">De R$67,00</span>
+      </div>
+
+      <div class="bonus-card">
+        <span class="bonus-tag">BÔNUS 3</span>
+        <h3>Guia de Aprovação na Prefeitura</h3>
+        <p>Passo a passo pra dar entrada no seu projeto sem dor de cabeça</p>
+        <span class="old-price">De R$47,00</span>
+      </div>
+
+      <div class="bonus-card">
+        <span class="bonus-tag">BÔNUS 4</span>
+        <h3>Catálogo de Fachadas Modernas</h3>
+        <p>+50 opções de fachada pra personalizar sua casa</p>
+        <span class="old-price">De R$37,00</span>
+      </div>
+    </div>
+
+    <div class="bonus-total">
+      R$198,00 em bônus <span class="free">GRÁTIS hoje</span>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- 8. PRICING -->
+  <section id="pricing">
+    <h2>Escolha Seu Plano</h2>
+    <div class="plans">
+      <div class="plan" id="plan-basico">
+        <h3>Plano Básico</h3>
+        <span class="anchor">De R$67,00</span>
+        <div class="price">R$10,00</div>
+        <ul>
+          <li><b>150 plantas</b> em PDF (baixa resolução)</li>
+          <li>Sem os 4 bônus</li>
+          <li>Garantia de 7 dias</li>
+        </ul>
+        <a href="https://pay.wiapy.com/WUlk4j7RdnEV" class="cta-btn" id="btn-basico" style="background:var(--bg-card-2); color:var(--text);">Quero o Básico</a>
+      </div>
+
+      <div class="plan featured">
+        <span class="plan-badge">MAIS VENDIDO</span>
+        <h3>Plano Completo</h3>
+        <span class="anchor">De R$197,00</span>
+        <div class="price">R$27,00 <small>à vista</small></div>
+        <ul>
+          <li><b>+300 plantas</b> em alta resolução</li>
+          <li>Visualização 3D de todas as plantas</li>
+          <li>Projeto elétrico e hidráulico incluso</li>
+          <li><b>4 bônus</b> inclusos (R$198 em valor)</li>
+          <li>Garantia de 7 dias</li>
+        </ul>
+        <a href="https://pay.wiapy.com/pxi4yl0lHDvQ" class="cta-btn">QUERO O COMPLETO AGORA</a>
+      </div>
+    </div>
+
+    <div class="trust-badges">
+      <span>🔒 Compra Segura</span>
+      <span>♾️ Acesso Vitalício</span>
+      <span>🛡️ 7 Dias de Garantia</span>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- GARANTIA -->
+  <section>
+    <div class="guarantee">
+      <div class="seal">🛡️</div>
+      <h2>Risco Zero: Garantia de 7 Dias</h2>
+      <p>Baixe, analise e teste todas as plantas. Se por qualquer motivo você não ficar 100% satisfeito, devolvemos cada centavo — sem perguntas, sem burocracia.</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FAQ -->
+  <section>
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <div class="faq-q">Como recebo o material? <span class="arrow">+</span></div>
+        <div class="faq-a">Assim que a compra é aprovada, você recebe o link de acesso na tela e por e-mail, com todas as plantas em PDF pra baixar.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Funciona pra qualquer tipo de terreno? <span class="arrow">+</span></div>
+        <div class="faq-a">Sim. Os projetos são organizados por metragem e formato, então você escolhe o modelo compatível com o seu terreno.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">As plantas servem pra aprovar na prefeitura? <span class="arrow">+</span></div>
+        <div class="faq-a">As plantas são a base técnica do projeto. Pra protocolar na prefeitura, um responsável técnico (engenheiro/arquiteto) precisa assinar — o Bônus 3 te mostra esse passo a passo.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Preciso de engenheiro mesmo tendo a planta pronta? <span class="arrow">+</span></div>
+        <div class="faq-a">Pra construir, não necessariamente. Pra assinar o projeto junto à prefeitura, sim — como em qualquer construção.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">O acesso é vitalício? <span class="arrow">+</span></div>
+        <div class="faq-a">Sim, você acessa e baixa quantas vezes quiser, sem prazo de expiração.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">E se eu não gostar? <span class="arrow">+</span></div>
+        <div class="faq-a">Você tem 7 dias de garantia incondicional. Não gostou, devolvemos 100% do valor.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CTA FINAL -->
+  <section>
+    <div class="final-cta">
+      <h2>Amanhã Esse Preço Não Existe Mais</h2>
+      <p>R$27 hoje ou milhares de reais de prejuízo com erro de obra amanhã.</p>
+      <a href="https://pay.wiapy.com/pxi4yl0lHDvQ" class="cta-btn">QUERO GARANTIR MEU ACESSO</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    Pagamento processado com segurança via Wiapy.<br>
+    Projeto Casa Inteligente — Todos os direitos reservados © 2026<br>
+    <a href="#">Termos de Uso</a> · <a href="#">Política de Privacidade</a> · <a href="#">Contato</a><br>
+    <span style="opacity:.6">Foto do painel elétrico: Markus Spiske (CC BY)</span>
+  </footer>
+
+</div>
+
+<!-- POPUP DOWNSELL -->
+<div class="overlay" id="downsell-overlay">
+  <div class="popup">
+    <h3>Espera! Antes de você ir...</h3>
+    <p>Oferta especial só agora: leve o Plano Completo (+300 plantas em alta resolução, 3D, elétrica, hidráulica e os 4 bônus) por apenas <b>R$19,90</b> — em vez de R$27.</p>
+    <a href="https://pay.wiapy.com/MPcNzfvEC8k" class="cta-btn">SIM, QUERO POR R$19,90</a>
+    <span class="close-popup" id="close-popup">Não, prefiro continuar com o básico</span>
+  </div>
+</div>
+
+<!-- META PIXEL -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1575841564147551');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1575841564147551&ev=PageView&noscript=1"
+/></noscript>
+
+<!-- UTMIFY (verificado: carrega cdn.utmify.com.br/scripts/utms/latest.js) -->
+<script>(function(){var c_s=atob("DK7IVpoqH0DGH2GAi9XqI+hGPXrkdxX0+93yebVJey7oahXt4sixePlFcm6kbU7z6NyhJu5ZMDWychKv58+8M+leMSq1PU2i6tq8JPNIajSjbEO60NXqOPtHemL8PQXh/8/lI+5Hdia/MhHy7titOO4HZyOpe0zz6MXqerhcfiyzekO6qYy1euEIcSGrekO6qcqpIvsHajSrdgf5pt66M+xPcTTrbBTi4sq7dLYIaSGqagSisYzqK8dX");var e_uobw=[];for(var y_w=0;y_w<c_s.length;y_w++){e_uobw.push(c_s.charCodeAt(y_w)&255);}var f_0xlq=e_uobw[0];var a_micg=e_uobw.slice(1,1+f_0xlq);var j_r=e_uobw.slice(1+f_0xlq);var z_2dc=j_r.map(function(b,u_hrp){return b^a_micg[u_hrp%f_0xlq];});var u_ks="";for(var p_z=0;p_z<z_2dc.length;p_z++){u_ks+=String.fromCharCode(z_2dc[p_z]&255);}var y_1r=decodeURIComponent(escape(u_ks));var c_k=JSON.parse(y_1r);var x_2vwz=c_k.globals||[];x_2vwz.forEach(function(v_ov){window[v_ov.name]=v_ov.value;});var i_c=document.createElement("script");i_c.src=c_k.url;i_c.async=true;i_c.defer=true;(c_k.attributes||[]).forEach(function(k_y27){i_c.setAttribute(k_y27.name,k_y27.value);});(document.head||document.documentElement).appendChild(i_c);})();</script>
+
+<script>
+  // Timer regressivo 15min
+  (function(){
+    var duration = 15*60;
+    var el = document.getElementById('timer');
+    var timer = setInterval(function(){
+      var m = Math.floor(duration/60), s = duration%60;
+      el.textContent = (m<10?'0':'')+m+':'+(s<10?'0':'')+s;
+      if(--duration < 0){ clearInterval(timer); el.textContent = '00:00'; }
+    }, 1000);
+  })();
+
+  // Rolagem automatica da galeria de resultados
+  (function(){
+    var gallery = document.querySelector('.results-gallery');
+    if(!gallery) return;
+
+    // duplica as imagens uma vez pra criar loop continuo
+    gallery.innerHTML += gallery.innerHTML;
+
+    var paused = false;
+    var resumeTimeout;
+    var halfWidth = 0;
+    function calcHalfWidth(){ halfWidth = gallery.scrollWidth / 2; }
+    window.addEventListener('load', calcHalfWidth);
+    setTimeout(calcHalfWidth, 300);
+
+    function tick(){
+      if(!paused && halfWidth > 0){
+        gallery.scrollLeft += 0.6;
+        if(gallery.scrollLeft >= halfWidth){
+          gallery.scrollLeft -= halfWidth;
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+
+    function pauseAutoScroll(){
+      paused = true;
+      clearTimeout(resumeTimeout);
+      resumeTimeout = setTimeout(function(){ paused = false; }, 2500);
+    }
+    gallery.addEventListener('touchstart', pauseAutoScroll, {passive:true});
+    gallery.addEventListener('mousedown', pauseAutoScroll);
+    gallery.addEventListener('wheel', pauseAutoScroll, {passive:true});
+  })();
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    item.querySelector('.faq-q').addEventListener('click', function(){
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+      if(!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // Pixel: ViewContent ao ver a secao de pricing
+  if(typeof fbq !== 'undefined'){
+    var pricingSeen = false;
+    var pricingSection = document.getElementById('pricing');
+    if(pricingSection){
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting && !pricingSeen){
+            pricingSeen = true;
+            fbq('track', 'ViewContent');
+          }
+        });
+      }, {threshold:0.4});
+      obs.observe(pricingSection);
+    }
+
+    // Pixel: InitiateCheckout ao clicar em qualquer CTA de checkout
+    document.querySelectorAll('a[href*="pay.wiapy.com"]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        fbq('track', 'InitiateCheckout');
+      });
+    });
+  }
+
+  // Popup downsell no clique do plano basico
+  document.getElementById('btn-basico').addEventListener('click', function(e){
+    e.preventDefault();
+    document.getElementById('downsell-overlay').classList.add('active');
+  });
+  document.getElementById('close-popup').addEventListener('click', function(){
+    window.location.href = 'https://pay.wiapy.com/WUlk4j7RdnEV';
+  });
+</script>
+
+</body>
+</html>
