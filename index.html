@@ -125,6 +125,19 @@
   .pain-list li .x{color:#ef4444; font-weight:700;}
   .pain-close{font-weight:600; color:var(--text); font-size:16px; margin-top:14px;}
 
+  /* COMPARATIVO JEITO COMUM x JEITO INTELIGENTE */
+  .compare-grid{display:flex; flex-direction:column; gap:14px; margin-bottom:16px;}
+  .compare-col{
+    border-radius:12px; padding:16px; box-shadow:var(--card-shadow); border:1px solid var(--border);
+  }
+  .compare-col h3{font-size:15px; margin-bottom:10px;}
+  .compare-col ul{list-style:none;}
+  .compare-col li{font-size:14px; padding:6px 0; line-height:1.4;}
+  .compare-bad{background:#fef2f2; border-color:#fecaca;}
+  .compare-bad h3{color:#dc2626;}
+  .compare-good{background:#f0fdf4; border-color:#bbf7d0;}
+  .compare-good h3{color:var(--green);}
+
   /* O QUE VOCE RECEBE */
   .grid{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
   .grid-card{
@@ -218,8 +231,9 @@
   }
   .plan h3{font-size:17px; margin-bottom:6px;}
   .plan .anchor{color:#6b7d90; text-decoration:line-through; font-size:14px;}
-  .price{font-size:34px; font-weight:700; color:var(--accent); margin:4px 0 10px;}
+  .price{font-size:34px; font-weight:700; color:var(--accent); margin:4px 0 4px;}
   .price small{font-size:15px; color:var(--text-muted); font-weight:500;}
+  .savings{display:block; color:var(--green); font-weight:700; font-size:13px; margin-bottom:12px;}
   .plan ul{list-style:none; margin-bottom:16px;}
   .plan ul li{font-size:14px; padding:5px 0; color:var(--text-muted);}
   .plan ul li b{color:var(--text); font-weight:600;}
@@ -304,6 +318,9 @@
     .pain-list{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
     .pain-list li{margin-bottom:0;}
 
+    .compare-grid{flex-direction:row;}
+    .compare-col{flex:1;}
+
     .grid{grid-template-columns:repeat(3, 1fr);}
 
     .bonus-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
@@ -348,7 +365,7 @@
 
   <!-- 3.5 RESULTADOS REAIS -->
   <section>
-    <h2 style="text-align:center;">Mais de <span style="color:var(--accent)">12.890 casas de campo</span> já foram construídas utilizando nossos projetos.</h2>
+    <h2 style="text-align:center;">Mais de <span style="color:var(--accent)">15.400 famílias</span> já tiraram a casa própria do papel com nossos projetos.</h2>
     <div class="results-gallery">
       <img src="assets/resultados/casa1.webp" alt="Casa de campo construída com nossos projetos">
       <img src="assets/resultados/casa2.webp" alt="Casa de campo construída com nossos projetos">
@@ -364,12 +381,26 @@
   <section>
     <h2>O Que "Construir no Improviso" Custa de Verdade</h2>
     <p class="section-sub">Se você tá pensando em construir sem um projeto pronto, presta atenção nisso:</p>
-    <ul class="pain-list">
-      <li><span class="x">✗</span> Contratar um arquiteto do zero pode custar de R$1.500 a R$5.000 só pela planta</li>
-      <li><span class="x">✗</span> Um erro de medida na fundação vira retrabalho — e retrabalho custa caro</li>
-      <li><span class="x">✗</span> Construir sem projeto aprovado pode significar multa ou embargo da obra</li>
-      <li><span class="x">✗</span> Sem planejamento elétrico e hidráulico, a reforma depois de pronto sai 3x mais cara</li>
-    </ul>
+    <div class="compare-grid">
+      <div class="compare-col compare-bad">
+        <h3>❌ O Jeito Comum</h3>
+        <ul>
+          <li>Contratar um arquiteto do zero pode custar de R$1.500 a R$5.000 só pela planta</li>
+          <li>Um erro de medida na fundação vira retrabalho — e retrabalho custa caro</li>
+          <li>Construir sem projeto aprovado pode significar multa ou embargo da obra</li>
+          <li>Sem planejamento elétrico e hidráulico, a reforma depois de pronto sai 3x mais cara</li>
+        </ul>
+      </div>
+      <div class="compare-col compare-good">
+        <h3>✅ O Jeito Inteligente</h3>
+        <ul>
+          <li>+300 plantas prontas por uma fração do preço de um arquiteto</li>
+          <li>Medidas e cálculo estrutural prontos — sem erro de fundação</li>
+          <li>Base técnica pronta pra aprovação na prefeitura, sem risco de embargo</li>
+          <li>Projeto elétrico e hidráulico incluso desde o início, sem retrabalho depois</li>
+        </ul>
+      </div>
+    </div>
     <p class="pain-close">A verdade é que "economizar" no projeto é a forma mais cara de construir.</p>
   </section>
 
@@ -433,7 +464,7 @@
   <!-- 6. PROVA SOCIAL -->
   <section>
     <h2>Eles Também Tinham <span style="color:var(--accent)">Medo de Errar na Obra...</span></h2>
-    <p class="section-sub">Veja o que dizem proprietários que já construíram utilizando nossas plantas.</p>
+    <p class="section-sub">Veja o que dizem alguns dos mais de <b>15.400 proprietários</b> que já construíram utilizando nossas plantas.</p>
     <!-- DEPOIMENTOS: placeholder — trocar pelos depoimentos reais dos seus clientes assim que tiver -->
     <div class="testimonials-grid">
     <div class="testimonial has-photo">
@@ -561,6 +592,7 @@
         <h3>Plano Básico</h3>
         <span class="anchor">De R$67,00</span>
         <div class="price">R$10,00</div>
+        <span class="savings">Você economiza R$57,00</span>
         <ul>
           <li><b>150 plantas</b> em PDF (baixa resolução)</li>
           <li>Sem os 4 bônus</li>
@@ -574,6 +606,7 @@
         <h3>Plano Completo</h3>
         <span class="anchor">De R$197,00</span>
         <div class="price">R$27,00 <small>à vista</small></div>
+        <span class="savings">Você economiza R$170,00 + leva R$198 em bônus grátis</span>
         <ul>
           <li><b>+300 plantas</b> em alta resolução</li>
           <li>Visualização 3D de todas as plantas</li>
@@ -599,7 +632,7 @@
     <div class="guarantee">
       <div class="seal">🛡️</div>
       <h2>Risco Zero: Garantia de 7 Dias</h2>
-      <p>Baixe, analise e teste todas as plantas. Se por qualquer motivo você não ficar 100% satisfeito, devolvemos cada centavo — sem perguntas, sem burocracia.</p>
+      <p>Baixe, analise e teste todas as plantas com calma. Se, por qualquer motivo, você não ficar 100% satisfeito, eu devolvo cada centavo do seu dinheiro — sem perguntas, sem burocracia, sem letra miúda.</p>
     </div>
   </section>
 
@@ -642,7 +675,7 @@
   <section>
     <div class="final-cta">
       <h2>Amanhã Esse Preço Não Existe Mais</h2>
-      <p>R$27 hoje ou milhares de reais de prejuízo com erro de obra amanhã.</p>
+      <p>Junte-se a mais de 15.400 pessoas que já garantiram seus projetos. R$27 hoje ou milhares de reais de prejuízo com erro de obra amanhã.</p>
       <a href="https://pay.wiapy.com/pxi4yl0lHDvQ" class="cta-btn">QUERO GARANTIR MEU ACESSO</a>
     </div>
   </section>
