@@ -151,21 +151,28 @@
   .grid-card p{font-size:13px; color:var(--text-muted);}
   .grid-card.has-photo{padding:0; overflow:hidden;}
   .grid-card.has-photo .photo{
-    width:100%; height:90px; object-fit:cover; border-radius:0;
+    width:100%; height:170px; object-fit:cover; border-radius:0;
     display:block; margin-bottom:0;
   }
-  .grid-card.has-photo .card-body{padding:12px 14px 14px;}
+  .grid-card.has-photo .card-body{padding:14px 16px 16px;}
   .plant-collage{
     display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr;
-    gap:2px; height:110px;
+    gap:2px; height:170px;
   }
   .plant-collage img{width:100%; height:100%; object-fit:cover; border-radius:0; display:block;}
   .grid-card.has-photo .icon{
-    position:relative; top:-14px; margin-bottom:-8px;
+    position:relative; top:-16px; margin-bottom:-10px;
     background:var(--bg-card); border:1px solid var(--border);
-    width:28px; height:28px; border-radius:8px;
+    width:32px; height:32px; border-radius:8px;
     display:flex; align-items:center; justify-content:center;
-    font-size:15px;
+    font-size:16px;
+  }
+
+  /* VITRINE DE PROJETOS (fotos grandes) */
+  .showcase-grid{display:grid; grid-template-columns:1fr; gap:10px; margin-top:20px;}
+  .showcase-grid img{
+    width:100%; height:230px; object-fit:cover; border-radius:14px;
+    box-shadow:var(--card-shadow); border:1px solid var(--border);
   }
 
   /* PROVA SOCIAL */
@@ -322,6 +329,11 @@
     .compare-col{flex:1;}
 
     .grid{grid-template-columns:repeat(3, 1fr);}
+    .grid-card.has-photo .photo{height:190px;}
+    .plant-collage{height:190px;}
+
+    .showcase-grid{grid-template-columns:repeat(3, 1fr);}
+    .showcase-grid img{height:280px;}
 
     .bonus-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
     .bonus-card{margin-bottom:0;}
@@ -373,6 +385,20 @@
       <img src="assets/resultados/casa4.webp" alt="Casa de campo construída com nossos projetos">
       <img src="assets/resultados/casa5.webp" alt="Casa de campo construída com nossos projetos">
     </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- 3.7 VITRINE DE PROJETOS -->
+  <section>
+    <h2 style="text-align:center;">Veja o Tipo de Projeto Profissional que Você Vai Ter em Mãos</h2>
+    <p class="section-sub" style="text-align:center;">Iguais a esses, você recebe +300 modelos completos</p>
+    <div class="showcase-grid">
+      <img src="assets/plantas/planta2.webp" alt="Planta baixa profissional com layout completo dos cômodos">
+      <img src="assets/plantas/planta3.webp" alt="Planta baixa profissional com varanda e área gourmet">
+      <img src="assets/plantas/planta4.webp" alt="Planta baixa profissional de casa ampla com suíte master">
+    </div>
+    <a href="#pricing" class="cta-btn" style="margin-top:20px;">QUERO ACESSAR AS PLANTAS AGORA →</a>
   </section>
 
   <div class="divider"></div>
