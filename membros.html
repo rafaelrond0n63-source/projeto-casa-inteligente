@@ -247,6 +247,9 @@
       </div>
 
       <!-- UPSELL: INTERIORES + AREA DE LAZER -->
+      <!-- Desativado por enquanto (sem produto/mapeamento configurado na Wiapy ainda).
+           Pra reativar: descomente o bloco e o codigo relacionado no <script> abaixo. -->
+      <!--
       <div class="content-card" id="upsell-card">
         <div class="info">
           <div class="icon">🛋️</div>
@@ -257,6 +260,7 @@
         </div>
         <a class="cta-btn" id="upsell-btn" href="#" target="_blank" rel="noopener">🔒 Bloqueado</a>
       </div>
+      -->
     </section>
   </div>
 
@@ -333,18 +337,21 @@
       : "Olá! 👋";
     document.getElementById("user-name-label").textContent = nome || "";
 
-    const temUpsell = produtos.includes("interiores_lazer");
+    // Card de upsell (Interiores + Area de Lazer) esta desativado por
+    // enquanto -- o bloco HTML foi comentado, entao so mexe nele se existir.
     const upsellBtn = document.getElementById("upsell-btn");
-    if (temUpsell) {
-      upsellBtn.textContent = "Acessar conteúdo →";
-      upsellBtn.classList.remove("locked");
-      // TODO: trocar pelo link real da pasta de Interiores + Area de Lazer
-      upsellBtn.href = "https://drive.google.com/drive/folders/15HfVloNu7XzLDnJNM2FwfJgvun2L6dHz";
-    } else {
-      upsellBtn.textContent = "🔒 Bloqueado";
-      upsellBtn.classList.add("locked");
-      upsellBtn.removeAttribute("href");
-      upsellBtn.addEventListener("click", (e) => e.preventDefault());
+    if (upsellBtn) {
+      const temUpsell = produtos.includes("interiores_lazer");
+      if (temUpsell) {
+        upsellBtn.textContent = "Acessar conteúdo →";
+        upsellBtn.classList.remove("locked");
+        upsellBtn.href = "https://drive.google.com/drive/folders/15HfVloNu7XzLDnJNM2FwfJgvun2L6dHz";
+      } else {
+        upsellBtn.textContent = "🔒 Bloqueado";
+        upsellBtn.classList.add("locked");
+        upsellBtn.removeAttribute("href");
+        upsellBtn.addEventListener("click", (e) => e.preventDefault());
+      }
     }
   }
 
