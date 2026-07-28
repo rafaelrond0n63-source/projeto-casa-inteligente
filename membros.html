@@ -242,7 +242,7 @@
         <h3>Galeria de Projetos Completos</h3>
         <p class="sub">Inspire-se com projetos reais · clique pra ver detalhes</p>
         <div class="gallery" id="gallery"></div>
-        <a class="see-all" href="https://drive.google.com/drive/folders/15HfVloNu7XzLDnJNM2FwfJgvun2L6dHz" target="_blank" rel="noopener">Ver catálogo completo (+300 plantas) →</a>
+        <a class="see-all" id="see-all-link" href="https://drive.google.com/drive/folders/15HfVloNu7XzLDnJNM2FwfJgvun2L6dHz" target="_blank" rel="noopener">Ver catálogo completo (+300 plantas) →</a>
       </div>
     </section>
 
@@ -268,7 +268,7 @@
             <p id="catalogo-desc">Catálogo completo em PDF, alta resolução.</p>
           </div>
         </div>
-        <a class="cta-btn" href="https://drive.google.com/drive/folders/15HfVloNu7XzLDnJNM2FwfJgvun2L6dHz" target="_blank" rel="noopener">Acessar conteúdo →</a>
+        <a class="cta-btn" id="catalogo-btn" href="https://drive.google.com/drive/folders/15HfVloNu7XzLDnJNM2FwfJgvun2L6dHz" target="_blank" rel="noopener">Acessar conteúdo →</a>
       </div>
     </section>
 
@@ -426,14 +426,25 @@
     document.getElementById("upgrade-section").style.display = plano === "basico" ? "block" : "none";
     document.getElementById("bonus-section").style.display = plano === "completo" ? "block" : "none";
 
+    const CATALOGO_COMPLETO_URL = "https://drive.google.com/drive/folders/15HfVloNu7XzLDnJNM2FwfJgvun2L6dHz";
+    const CATALOGO_BASICO_URL = "https://github.com/rafaelrond0n63-source/projeto-casa-inteligente/releases/download/basico-plantas-v1/150-Plantas-Basico-Projeto-Casa-Inteligente.zip";
+
     const catalogoTitulo = document.getElementById("catalogo-titulo");
     const catalogoDesc = document.getElementById("catalogo-desc");
+    const catalogoBtn = document.getElementById("catalogo-btn");
+    const seeAllLink = document.getElementById("see-all-link");
     if (plano === "completo") {
       catalogoTitulo.textContent = "+300 Plantas Profissionais de Casas";
       catalogoDesc.textContent = "Catálogo completo em PDF, alta resolução, com visualização 3D.";
+      catalogoBtn.href = CATALOGO_COMPLETO_URL;
+      seeAllLink.textContent = "Ver catálogo completo (+300 plantas) →";
+      seeAllLink.href = CATALOGO_COMPLETO_URL;
     } else {
       catalogoTitulo.textContent = "150 Plantas de Casas";
       catalogoDesc.textContent = "Catálogo do Plano Básico em PDF, resolução padrão.";
+      catalogoBtn.href = CATALOGO_BASICO_URL;
+      seeAllLink.textContent = "Baixar minhas 150 plantas →";
+      seeAllLink.href = CATALOGO_BASICO_URL;
     }
 
     // Card de upsell (Interiores + Area de Lazer) esta desativado por
