@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Área de Membros | Projeto Casa Inteligente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0f1115;
+    --bg-card: #171a20;
+    --bg-card-2: #1e2229;
+    --border: #2a2f38;
+    --text: #f3f4f6;
+    --text-muted: #9aa1ac;
+    --accent: #f2751e;
+    --accent-dark: #d9640f;
+    --green: #22c55e;
+    --red: #ef4444;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg); color:var(--text); font-family:'Inter',sans-serif;
+    line-height:1.5; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.brand{font-family:'Space Grotesk',sans-serif;}
+  img{max-width:100%; display:block; border-radius:12px;}
+  a{color:inherit;}
+  .container{max-width:1000px; margin:0 auto; padding:0 20px;}
+  button{font-family:inherit; cursor:pointer;}
+
+  /* HEADER */
+  header{
+    border-bottom:1px solid var(--border); padding:16px 0;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{display:flex; align-items:center; gap:10px; font-weight:700;}
+  .brand .icon{
+    width:36px; height:36px; border-radius:10px; background:var(--accent);
+    display:flex; align-items:center; justify-content:center; font-size:18px;
+  }
+  .brand small{display:block; color:var(--text-muted); font-weight:500; font-size:12px;}
+  .user-box{display:flex; align-items:center; gap:14px; font-size:13px; color:var(--text-muted);}
+  .logout-btn{
+    background:none; border:1px solid var(--border); color:var(--text-muted);
+    padding:8px 12px; border-radius:8px; font-size:13px;
+  }
+  .logout-btn:hover{border-color:var(--accent); color:var(--text);}
+
+  /* LOGIN SCREEN */
+  .login-screen{
+    min-height:100vh; display:flex; align-items:center; justify-content:center; padding:20px;
+  }
+  .login-card{
+    background:var(--bg-card); border:1px solid var(--border); border-radius:20px;
+    padding:40px 32px; max-width:400px; width:100%; text-align:center;
+  }
+  .login-card .icon{
+    width:64px; height:64px; border-radius:16px; background:var(--accent);
+    display:flex; align-items:center; justify-content:center; font-size:30px;
+    margin:0 auto 20px;
+  }
+  .login-card h1{font-size:24px; margin-bottom:8px;}
+  .login-card p{color:var(--text-muted); font-size:14px; margin-bottom:24px;}
+  .field{text-align:left; margin-bottom:18px;}
+  .field label{display:block; font-size:13px; margin-bottom:6px; color:var(--text-muted);}
+  .field input{
+    width:100%; background:var(--bg-card-2); border:1px solid var(--border);
+    border-radius:10px; padding:13px 14px; color:var(--text); font-size:15px;
+  }
+  .field input:focus{outline:none; border-color:var(--accent);}
+  .access-btn{
+    width:100%; background:var(--accent); color:#fff; font-weight:700; font-size:15px;
+    padding:14px; border:none; border-radius:10px; transition:background .15s ease;
+  }
+  .access-btn:hover{background:var(--accent-dark);}
+  .access-btn:disabled{opacity:.6; cursor:default;}
+  .login-hint{color:var(--text-muted); font-size:12px; margin-top:16px;}
+  .login-error{
+    background:rgba(239,68,68,.1); border:1px solid rgba(239,68,68,.4); color:#fca5a5;
+    border-radius:8px; padding:10px 12px; font-size:13px; margin-bottom:16px; display:none;
+  }
+
+  /* DASHBOARD */
+  .dashboard{display:none;}
+  .dashboard.active{display:block;}
+  .login-screen.hidden{display:none;}
+
+  section{padding:28px 0;}
+  .greeting h2{font-size:26px; margin-bottom:4px;}
+  .greeting p{color:var(--text-muted); font-size:15px;}
+
+  .panel{
+    background:linear-gradient(135deg, var(--bg-card-2), var(--bg-card));
+    border:1px solid var(--border); border-radius:18px; padding:24px; margin-top:20px;
+  }
+  .badge-exclusivo{
+    display:inline-block; background:rgba(242,117,30,.15); color:var(--accent);
+    font-size:12px; font-weight:700; padding:5px 12px; border-radius:999px; margin-bottom:12px;
+  }
+  .panel h3{font-size:22px; margin-bottom:4px;}
+  .panel .sub{color:var(--text-muted); font-size:14px; margin-bottom:18px;}
+
+  .gallery{display:grid; grid-template-columns:repeat(auto-fill, minmax(140px,1fr)); gap:12px;}
+  .gallery-item{
+    position:relative; border-radius:12px; overflow:hidden; cursor:pointer;
+    border:1px solid var(--border); aspect-ratio:4/3;
+  }
+  .gallery-item img{width:100%; height:100%; object-fit:cover; border-radius:0;}
+  .gallery-item .label{
+    position:absolute; bottom:0; left:0; right:0; padding:8px 10px;
+    background:linear-gradient(transparent, rgba(0,0,0,.85)); font-size:12px; font-weight:600;
+  }
+  .see-all{
+    display:inline-block; margin-top:16px; color:var(--accent); font-size:14px; font-weight:600;
+    text-decoration:none;
+  }
+
+  /* CARDS DE CONTEUDO */
+  .content-card{
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    background:var(--bg-card); border:1px solid var(--border); border-radius:16px;
+    padding:20px; margin-top:14px; flex-wrap:wrap;
+  }
+  .content-card .info{display:flex; align-items:center; gap:14px;}
+  .content-card .icon{
+    width:44px; height:44px; border-radius:12px; background:var(--bg-card-2);
+    display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0;
+  }
+  .content-card h4{font-size:15px; margin-bottom:2px;}
+  .content-card p{font-size:13px; color:var(--text-muted);}
+  .cta-btn{
+    background:var(--accent); color:#fff; font-weight:700; font-size:13px;
+    padding:11px 16px; border-radius:10px; text-decoration:none; white-space:nowrap;
+    border:none; display:inline-flex; align-items:center; gap:6px;
+  }
+  .cta-btn:hover{background:var(--accent-dark);}
+  .cta-btn.locked{background:var(--bg-card-2); color:var(--text-muted); cursor:default;}
+
+  /* MODAL */
+  .overlay{
+    display:none; position:fixed; inset:0; background:rgba(0,0,0,.75);
+    z-index:100; align-items:center; justify-content:center; padding:20px;
+  }
+  .overlay.active{display:flex;}
+  .modal{
+    background:var(--bg-card); border:1px solid var(--border); border-radius:18px;
+    max-width:520px; width:100%; overflow:hidden;
+  }
+  .modal img{border-radius:0; width:100%; height:280px; object-fit:cover;}
+  .modal-body{padding:22px;}
+  .modal-body h3{font-size:20px; margin-bottom:10px;}
+  .modal-body p{font-size:14px; color:var(--text-muted); margin-bottom:18px;}
+  .modal-close{
+    position:absolute; top:14px; right:14px; background:rgba(0,0,0,.5); color:#fff;
+    border:none; width:32px; height:32px; border-radius:50%; font-size:16px;
+  }
+
+  footer{padding:30px 0; text-align:center; color:var(--text-muted); font-size:12px;}
+
+  @media(max-width:600px){
+    .content-card{flex-direction:column; align-items:flex-start;}
+    .cta-btn{width:100%; justify-content:center;}
+  }
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="login-screen" id="login-screen">
+  <div class="login-card">
+    <div class="icon">🏠</div>
+    <h1>Área de Membros</h1>
+    <p>Acesse seu conteúdo exclusivo</p>
+
+    <div class="login-error" id="login-error">E-mail não encontrado. Use o mesmo e-mail da sua compra.</div>
+
+    <div class="field">
+      <label for="email-input">E-mail</label>
+      <input type="email" id="email-input" placeholder="voce@email.com" autocomplete="email">
+    </div>
+    <button class="access-btn" id="access-btn">ACESSAR</button>
+    <p class="login-hint">Use o e-mail da sua compra pra acessar.</p>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div class="dashboard" id="dashboard">
+  <header>
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; width:100%;">
+      <div class="brand">
+        <div class="icon">🏠</div>
+        <div>
+          Área de Membros
+          <small>PROJETO CASA INTELIGENTE</small>
+        </div>
+      </div>
+      <div class="user-box">
+        <span id="user-name-label"></span>
+        <button class="logout-btn" id="logout-btn">Sair</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="greeting">
+      <h2 id="greeting-text">Olá! 👋</h2>
+      <p>Acesse todos os seus conteúdos e materiais exclusivos.</p>
+    </section>
+
+    <!-- GALERIA -->
+    <section style="padding-top:0;">
+      <div class="panel">
+        <span class="badge-exclusivo">✨ EXCLUSIVO</span>
+        <h3>Galeria de Projetos Completos</h3>
+        <p class="sub">Inspire-se com projetos reais · clique pra ver detalhes</p>
+        <div class="gallery" id="gallery"></div>
+        <a class="see-all" href="https://drive.google.com/drive/folders/15HfVloNu7XzLDnJNM2FwfJgvun2L6dHz" target="_blank" rel="noopener">Ver catálogo completo (+300 plantas) →</a>
+      </div>
+    </section>
+
+    <!-- CALCULADORA -->
+    <section style="padding-top:0;">
+      <div class="content-card">
+        <div class="info">
+          <div class="icon">🧮</div>
+          <div>
+            <h4>Calculadora de Obra</h4>
+            <p>Estime o custo da sua construção em poucos passos.</p>
+          </div>
+        </div>
+        <a class="cta-btn" href="https://calculadoraobras.lovable.app/" target="_blank" rel="noopener">Abrir calculadora →</a>
+      </div>
+
+      <!-- BONUS PRINCIPAL -->
+      <div class="content-card">
+        <div class="info">
+          <div class="icon">📐</div>
+          <div>
+            <h4>+300 Plantas Profissionais de Casas</h4>
+            <p>Catálogo completo em PDF, alta resolução.</p>
+          </div>
+        </div>
+        <a class="cta-btn" href="https://drive.google.com/drive/folders/15HfVloNu7XzLDnJNM2FwfJgvun2L6dHz" target="_blank" rel="noopener">Acessar conteúdo →</a>
+      </div>
+
+      <!-- UPSELL: INTERIORES + AREA DE LAZER -->
+      <div class="content-card" id="upsell-card">
+        <div class="info">
+          <div class="icon">🛋️</div>
+          <div>
+            <h4>Projetos de Interiores + Área de Lazer</h4>
+            <p id="upsell-desc">+250 projetos de interiores, churrasqueiras, piscinas e quintais.</p>
+          </div>
+        </div>
+        <a class="cta-btn" id="upsell-btn" href="#" target="_blank" rel="noopener">🔒 Bloqueado</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    Projeto Casa Inteligente — Área de Membros · © 2026
+  </footer>
+</div>
+
+<!-- MODAL GALERIA -->
+<div class="overlay" id="gallery-overlay">
+  <div class="modal" style="position:relative;">
+    <button class="modal-close" id="modal-close">✕</button>
+    <img id="modal-img" src="" alt="">
+    <div class="modal-body">
+      <h3 id="modal-title"></h3>
+      <p id="modal-desc"></p>
+      <a class="cta-btn" id="modal-download" href="https://drive.google.com/drive/folders/15HfVloNu7XzLDnJNM2FwfJgvun2L6dHz" target="_blank" rel="noopener">⬇ Baixar projeto</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const SUPABASE_URL = "https://xobtmptdcywlepgletjr.supabase.co";
+  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhvYnRtcHRkY3l3bGVwZ2xldGpyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUyMTA1MTMsImV4cCI6MjEwMDc4NjUxM30.fIubetcUoexZ4pjJKJsinCJAlV-uLMThNhLzsqZ0zxo";
+
+  const GALLERY_ITEMS = [
+    { titulo: "Casa de Campo 01", img: "assets/resultados/casa1.webp", desc: "Residência de campo com telhado colonial, varanda ampla e piscina — 3 dormitórios, sendo uma suíte." },
+    { titulo: "Casa de Campo 02", img: "assets/resultados/casa2.webp", desc: "Design acolhedor com colunas rústicas em madeira e integração total entre área social e jardim." },
+    { titulo: "Casa de Campo 03", img: "assets/resultados/casa3.webp", desc: "Fachada clean com varanda gourmet, ideal para terrenos de sítio ou chácara." },
+    { titulo: "Casa de Campo 04", img: "assets/resultados/casa4.webp", desc: "Projeto térreo com carport coberto, rede na varanda e amplo jardim frontal." },
+    { titulo: "Casa de Campo 05", img: "assets/resultados/casa5.webp", desc: "Casa de campo iluminada, com pé-direito alto e varanda estruturada em madeira de lei." },
+  ];
+
+  const gallery = document.getElementById("gallery");
+  GALLERY_ITEMS.forEach((item, i) => {
+    const el = document.createElement("div");
+    el.className = "gallery-item";
+    el.innerHTML = `<img src="${item.img}" alt="${item.titulo}"><div class="label">${item.titulo}</div>`;
+    el.addEventListener("click", () => openModal(item));
+    gallery.appendChild(el);
+  });
+
+  function openModal(item) {
+    document.getElementById("modal-img").src = item.img;
+    document.getElementById("modal-title").textContent = item.titulo;
+    document.getElementById("modal-desc").textContent = item.desc;
+    document.getElementById("gallery-overlay").classList.add("active");
+  }
+  document.getElementById("modal-close").addEventListener("click", () => {
+    document.getElementById("gallery-overlay").classList.remove("active");
+  });
+  document.getElementById("gallery-overlay").addEventListener("click", (e) => {
+    if (e.target.id === "gallery-overlay") e.target.classList.remove("active");
+  });
+
+  async function checkPurchase(email) {
+    const res = await fetch(`${SUPABASE_URL}/functions/v1/check-purchase`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+      },
+      body: JSON.stringify({ email }),
+    });
+    return res.json();
+  }
+
+  function renderDashboard(nome, produtos) {
+    document.getElementById("login-screen").classList.add("hidden");
+    document.getElementById("dashboard").classList.add("active");
+    const primeiroNome = (nome || "").split(" ")[0] || "";
+    document.getElementById("greeting-text").textContent = primeiroNome
+      ? `Olá, ${primeiroNome.toUpperCase()} 👋`
+      : "Olá! 👋";
+    document.getElementById("user-name-label").textContent = nome || "";
+
+    const temUpsell = produtos.includes("interiores_lazer");
+    const upsellBtn = document.getElementById("upsell-btn");
+    if (temUpsell) {
+      upsellBtn.textContent = "Acessar conteúdo →";
+      upsellBtn.classList.remove("locked");
+      // TODO: trocar pelo link real da pasta de Interiores + Area de Lazer
+      upsellBtn.href = "https://drive.google.com/drive/folders/15HfVloNu7XzLDnJNM2FwfJgvun2L6dHz";
+    } else {
+      upsellBtn.textContent = "🔒 Bloqueado";
+      upsellBtn.classList.add("locked");
+      upsellBtn.removeAttribute("href");
+      upsellBtn.addEventListener("click", (e) => e.preventDefault());
+    }
+  }
+
+  async function tryLogin() {
+    const emailInput = document.getElementById("email-input");
+    const email = emailInput.value.trim().toLowerCase();
+    const errorBox = document.getElementById("login-error");
+    const btn = document.getElementById("access-btn");
+    errorBox.style.display = "none";
+
+    if (!email) return;
+
+    btn.disabled = true;
+    btn.textContent = "VERIFICANDO...";
+
+    try {
+      const data = await checkPurchase(email);
+      if (data.found && data.produtos && data.produtos.includes("principal")) {
+        sessionStorage.setItem("membro_email", email);
+        sessionStorage.setItem("membro_nome", data.nome || "");
+        sessionStorage.setItem("membro_produtos", JSON.stringify(data.produtos));
+        renderDashboard(data.nome, data.produtos);
+      } else {
+        errorBox.style.display = "block";
+      }
+    } catch (err) {
+      errorBox.textContent = "Erro ao verificar seu acesso. Tente novamente em instantes.";
+      errorBox.style.display = "block";
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "ACESSAR";
+    }
+  }
+
+  document.getElementById("access-btn").addEventListener("click", tryLogin);
+  document.getElementById("email-input").addEventListener("keydown", (e) => {
+    if (e.key === "Enter") tryLogin();
+  });
+
+  document.getElementById("logout-btn").addEventListener("click", () => {
+    sessionStorage.clear();
+    document.getElementById("dashboard").classList.remove("active");
+    document.getElementById("login-screen").classList.remove("hidden");
+    document.getElementById("email-input").value = "";
+  });
+
+  // Mantem logado durante a sessao do navegador
+  (function restoreSession(){
+    const email = sessionStorage.getItem("membro_email");
+    const nome = sessionStorage.getItem("membro_nome");
+    const produtosRaw = sessionStorage.getItem("membro_produtos");
+    if (email && produtosRaw) {
+      renderDashboard(nome, JSON.parse(produtosRaw));
+    }
+  })();
+</script>
+
+</body>
+</html>
