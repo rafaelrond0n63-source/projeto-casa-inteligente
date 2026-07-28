@@ -139,6 +139,23 @@
   .cta-btn:hover{background:var(--accent-dark);}
   .cta-btn.locked{background:var(--bg-card-2); color:var(--text-muted); cursor:default;}
 
+  /* PLANO */
+  .plano-badge{
+    display:inline-block; font-size:12px; font-weight:700; padding:5px 12px;
+    border-radius:999px; margin-left:10px; vertical-align:middle;
+  }
+  .plano-badge.completo{background:rgba(34,197,94,.15); color:var(--green);}
+  .plano-badge.basico{background:rgba(154,161,172,.15); color:var(--text-muted);}
+
+  .upgrade-nudge{
+    background:linear-gradient(135deg, rgba(242,117,30,.12), rgba(242,117,30,.03));
+    border:1px solid rgba(242,117,30,.3); border-radius:16px;
+    padding:18px 20px; margin-top:14px; display:flex; align-items:center;
+    justify-content:space-between; gap:14px; flex-wrap:wrap;
+  }
+  .upgrade-nudge p{font-size:14px; color:var(--text-muted);}
+  .upgrade-nudge strong{color:var(--text);}
+
   /* MODAL */
   .overlay{
     display:none; position:fixed; inset:0; background:rgba(0,0,0,.75);
@@ -206,8 +223,16 @@
 
   <div class="container">
     <section class="greeting">
-      <h2 id="greeting-text">Olá! 👋</h2>
+      <h2><span id="greeting-text">Olá! 👋</span> <span class="plano-badge" id="plano-badge"></span></h2>
       <p>Acesse todos os seus conteúdos e materiais exclusivos.</p>
+    </section>
+
+    <!-- AVISO DE UPGRADE (so aparece pra quem comprou o Basico) -->
+    <section style="padding-top:0; display:none;" id="upgrade-section">
+      <div class="upgrade-nudge">
+        <p>Seu plano é o <strong>Básico</strong> (150 plantas em baixa resolução, sem os bônus). Quer <strong>+300 plantas em alta resolução, visualização 3D e os 4 bônus</strong>?</p>
+        <a class="cta-btn" href="https://www.projetocasainteligente.site/#pricing" target="_blank" rel="noopener">Fazer upgrade →</a>
+      </div>
     </section>
 
     <!-- GALERIA -->
@@ -239,13 +264,68 @@
         <div class="info">
           <div class="icon">📐</div>
           <div>
-            <h4>+300 Plantas Profissionais de Casas</h4>
-            <p>Catálogo completo em PDF, alta resolução.</p>
+            <h4 id="catalogo-titulo">+300 Plantas Profissionais de Casas</h4>
+            <p id="catalogo-desc">Catálogo completo em PDF, alta resolução.</p>
           </div>
         </div>
         <a class="cta-btn" href="https://drive.google.com/drive/folders/15HfVloNu7XzLDnJNM2FwfJgvun2L6dHz" target="_blank" rel="noopener">Acessar conteúdo →</a>
       </div>
+    </section>
 
+    <!-- 4 BONUS EXCLUSIVOS (so pro plano Completo) -->
+    <section style="padding-top:0; display:none;" id="bonus-section">
+      <div class="panel">
+        <span class="badge-exclusivo">🎁 BÔNUS DO PLANO COMPLETO</span>
+        <h3>Seus 4 Bônus</h3>
+        <p class="sub">Incluídos porque você garantiu o Plano Completo</p>
+
+        <div class="content-card">
+          <div class="info">
+            <div class="icon">✅</div>
+            <div>
+              <h4>Checklist de Materiais de Construção</h4>
+              <p>Lista completa pra cotar com o fornecedor sem esquecer nada.</p>
+            </div>
+          </div>
+          <a class="cta-btn" href="https://drive.google.com/drive/folders/1WfrSlgCIuAI4RDhy8wMINFdSmkZz4qqM" target="_blank" rel="noopener">Acessar →</a>
+        </div>
+
+        <div class="content-card">
+          <div class="info">
+            <div class="icon">💰</div>
+            <div>
+              <h4>Planilha de Orçamento de Obra</h4>
+              <p>Controle quanto vai gastar em cada etapa da construção.</p>
+            </div>
+          </div>
+          <a class="cta-btn" href="https://drive.google.com/drive/folders/1WfrSlgCIuAI4RDhy8wMINFdSmkZz4qqM" target="_blank" rel="noopener">Acessar →</a>
+        </div>
+
+        <div class="content-card">
+          <div class="info">
+            <div class="icon">🏛️</div>
+            <div>
+              <h4>Guia de Aprovação na Prefeitura</h4>
+              <p>Passo a passo pra dar entrada no seu projeto sem dor de cabeça.</p>
+            </div>
+          </div>
+          <a class="cta-btn" href="https://drive.google.com/drive/folders/1WfrSlgCIuAI4RDhy8wMINFdSmkZz4qqM" target="_blank" rel="noopener">Acessar →</a>
+        </div>
+
+        <div class="content-card">
+          <div class="info">
+            <div class="icon">🏠</div>
+            <div>
+              <h4>Catálogo de Fachadas Modernas</h4>
+              <p>+50 opções de fachada pra personalizar sua casa.</p>
+            </div>
+          </div>
+          <a class="cta-btn" href="https://drive.google.com/drive/folders/1WfrSlgCIuAI4RDhy8wMINFdSmkZz4qqM" target="_blank" rel="noopener">Acessar →</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top:0;">
       <!-- UPSELL: INTERIORES + AREA DE LAZER -->
       <!-- Desativado por enquanto (sem produto/mapeamento configurado na Wiapy ainda).
            Pra reativar: descomente o bloco e o codigo relacionado no <script> abaixo. -->
@@ -337,6 +417,25 @@
       : "Olá! 👋";
     document.getElementById("user-name-label").textContent = nome || "";
 
+    // Plano: "completo" tem prioridade se a pessoa tiver os dois (ex: fez upgrade).
+    const plano = produtos.includes("completo") ? "completo" : "basico";
+    const planoBadge = document.getElementById("plano-badge");
+    planoBadge.textContent = plano === "completo" ? "PLANO COMPLETO" : "PLANO BÁSICO";
+    planoBadge.className = "plano-badge " + plano;
+
+    document.getElementById("upgrade-section").style.display = plano === "basico" ? "block" : "none";
+    document.getElementById("bonus-section").style.display = plano === "completo" ? "block" : "none";
+
+    const catalogoTitulo = document.getElementById("catalogo-titulo");
+    const catalogoDesc = document.getElementById("catalogo-desc");
+    if (plano === "completo") {
+      catalogoTitulo.textContent = "+300 Plantas Profissionais de Casas";
+      catalogoDesc.textContent = "Catálogo completo em PDF, alta resolução, com visualização 3D.";
+    } else {
+      catalogoTitulo.textContent = "150 Plantas de Casas";
+      catalogoDesc.textContent = "Catálogo do Plano Básico em PDF, resolução padrão.";
+    }
+
     // Card de upsell (Interiores + Area de Lazer) esta desativado por
     // enquanto -- o bloco HTML foi comentado, entao so mexe nele se existir.
     const upsellBtn = document.getElementById("upsell-btn");
@@ -369,7 +468,8 @@
 
     try {
       const data = await checkPurchase(email);
-      if (data.found && data.produtos && data.produtos.includes("principal")) {
+      const temAcessoValido = data.produtos && (data.produtos.includes("basico") || data.produtos.includes("completo"));
+      if (data.found && temAcessoValido) {
         sessionStorage.setItem("membro_email", email);
         sessionStorage.setItem("membro_nome", data.nome || "");
         sessionStorage.setItem("membro_produtos", JSON.stringify(data.produtos));
