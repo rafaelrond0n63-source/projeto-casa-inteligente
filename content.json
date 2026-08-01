@@ -102,7 +102,20 @@
       { "icon": "🐝", "title": "Apiários e Casas de Apoio", "desc": "Estruturas para colmeias, armazenamento de equipamentos e apoio ao manejo das abelhas." }
     ],
     "ctaText": "QUERO ACESSAR O ACERVO RURAL →",
-    "ctaHref": "#pricing"
+    "ctaHref": "#pricing",
+    "galleryHeading": "Veja Alguns Projetos Reais do Acervo",
+    "gallery": [
+      { "src": "assets/acervo/acervo1.webp", "alt": "Curral de Manejo Bovino - planta baixa, vistas e especificações técnicas" },
+      { "src": "assets/acervo/acervo2.webp", "alt": "Acervo Projeto Rural em laptop, tablet e celular" },
+      { "src": "assets/acervo/acervo4.webp", "alt": "Galinheiro para 100 aves - planta baixa e detalhes construtivos" },
+      { "src": "assets/acervo/acervo5.webp", "alt": "Galpão de madeira - planta baixa e vistas" },
+      { "src": "assets/acervo/acervo6.webp", "alt": "Depósito rural - planta baixa e materiais principais" },
+      { "src": "assets/acervo/acervo3.webp", "alt": "Baia maternidade - conforto e proteção para matrizes e leitões" },
+      { "src": "assets/acervo/acervo7.webp", "alt": "Tanque de peixe - planta baixa e especificações técnicas" },
+      { "src": "assets/acervo/acervo8.webp", "alt": "Apiário com casa de apoio - planta baixa e detalhes construtivos" },
+      { "src": "assets/acervo/acervo9.webp", "alt": "Cerca com corredor rural - planta baixa e especificações" },
+      { "src": "assets/acervo/acervo10.webp", "alt": "Pack 01 Pecuária e Manejo - estruturas completas" }
+    ]
   },
   "ruralPacks": {
     "eyebrow": "Exclusivo do Plano Completo",
@@ -125,6 +138,14 @@
       { "photo": "assets/resultados/casa5.webp", "stars": "★★★★★", "text": "Comprei achando que ia ser só uma planta simples e vieram até o projeto elétrico e hidráulico. Muito mais completo do que eu esperava.", "avatarInitial": "F", "avatarColor": "#38bdf8", "name": "Fernanda A.", "role": "Professora — Caxias do Sul, RS" },
       { "photo": "assets/resultados/casa1.webp", "stars": "★★★★☆", "text": "Peguei o modelo de casa de campo e adaptei um pouco. Ficou exatamente como eu queria pro meu sítio.", "avatarImg": "assets/avatares/adriano.webp", "name": "Adriano M.", "role": "Produtor Rural — Ponta Grossa, PR" },
       { "photo": "assets/resultados/casa3.webp", "stars": "★★★★★", "text": "Já tinha comprado planta com engenheiro antes e demorou 3 semanas. Aqui foi na hora, e o guia de aprovação me ajudou a levar direto na prefeitura.", "avatarInitial": "M", "avatarColor": "#a78bfa", "name": "Marcos V.", "role": "Aposentado — Feira de Santana, BA" }
+    ],
+    "galleryHeading": "Prints Reais de Quem Já Comprou",
+    "gallery": [
+      { "src": "assets/depoimentos/rr1.webp", "alt": "Print de conversa no WhatsApp - depoimento de Camila Fernandes" },
+      { "src": "assets/depoimentos/rr2.webp", "alt": "Print de conversa no WhatsApp - depoimento de João e Patrícia" },
+      { "src": "assets/depoimentos/rr3.webp", "alt": "Print de conversa no WhatsApp - depoimento de Fernanda Alves" },
+      { "src": "assets/depoimentos/rr4.webp", "alt": "Print de conversa no WhatsApp - depoimento de Roberto Silva" },
+      { "src": "assets/depoimentos/rr5.webp", "alt": "Print de conversa no WhatsApp - depoimento de Adriano Martins" }
     ]
   },
   "bonuses": {

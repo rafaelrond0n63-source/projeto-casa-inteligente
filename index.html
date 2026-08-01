@@ -164,6 +164,18 @@
     box-shadow:var(--card-shadow);
   }
 
+  /* GALERIAS AUTO-SCROLL (provas sociais / acervo) - mesmo mecanismo dos Resultados Reais */
+  .hscroll-gallery{
+    display:flex; gap:12px; overflow-x:auto; margin:20px -20px 0; padding:4px 20px 8px;
+    -webkit-overflow-scrolling:touch; scrollbar-width:none;
+  }
+  .hscroll-gallery::-webkit-scrollbar{display:none;}
+  .hscroll-gallery img{
+    border-radius:14px; box-shadow:var(--card-shadow); flex-shrink:0;
+  }
+  .hscroll-gallery.social-proof img{ flex:0 0 200px; height:290px; object-fit:cover; object-position:top; }
+  .hscroll-gallery.acervo img{ flex:0 0 300px; height:210px; object-fit:cover; }
+
   /* DOR */
   .pain-list{list-style:none; margin-bottom:16px;}
   .pain-list li{
@@ -376,6 +388,9 @@
 
     .results-gallery{margin:24px 0 0;}
     .results-gallery img{flex:0 0 320px; height:220px;}
+    .hscroll-gallery{margin:24px 0 0;}
+    .hscroll-gallery.social-proof img{flex:0 0 240px; height:340px;}
+    .hscroll-gallery.acervo img{flex:0 0 380px; height:266px;}
 
     section{padding:48px 0;}
     section h2{font-size:28px;}
@@ -551,7 +566,7 @@ src="https://www.facebook.com/tr?id=1575841564147551&ev=PageView&noscript=1"
     return `
       <span class="eyebrow">${r.eyebrow}</span>
       <h2 style="text-align:center;">${r.headingHtml}</h2>
-      <div class="results-gallery">
+      <div class="results-gallery auto-scroll">
         ${r.images.map(img => `<img src="${img.src}" alt="${img.alt}">`).join('')}
       </div>
     `;
@@ -630,6 +645,10 @@ src="https://www.facebook.com/tr?id=1575841564147551&ev=PageView&noscript=1"
       <p class="section-sub">${a.sub}</p>
       <span class="badge">${a.countBadge}</span>
       <div class="grid" style="margin-top:16px;">${a.cards.map(card).join('')}</div>
+      <h3 style="margin-top:28px; font-size:17px;">${a.galleryHeading}</h3>
+      <div class="hscroll-gallery acervo auto-scroll">
+        ${a.gallery.map(img => `<img src="${img.src}" alt="${img.alt}">`).join('')}
+      </div>
       <a href="${a.ctaHref}" class="cta-btn" style="margin-top:20px;">${a.ctaText}</a>
     `;
   }
@@ -677,6 +696,10 @@ src="https://www.facebook.com/tr?id=1575841564147551&ev=PageView&noscript=1"
       <h2>${t.headingHtml}</h2>
       <p class="section-sub">${t.subHtml}</p>
       <div class="testimonials-grid">${t.items.map(item).join('')}</div>
+      <h3 style="margin-top:28px; font-size:17px;">${t.galleryHeading}</h3>
+      <div class="hscroll-gallery social-proof auto-scroll">
+        ${t.gallery.map(img => `<img src="${img.src}" alt="${img.alt}">`).join('')}
+      </div>
     `;
   }
 
@@ -817,11 +840,8 @@ src="https://www.facebook.com/tr?id=1575841564147551&ev=PageView&noscript=1"
       }, 1000);
     })();
 
-    // Rolagem automatica da galeria de resultados
-    (function(){
-      var gallery = document.querySelector('.results-gallery');
-      if(!gallery) return;
-
+    // Rolagem automatica das galerias (resultados, provas sociais, acervo)
+    document.querySelectorAll('.auto-scroll').forEach(function(gallery){
       gallery.innerHTML += gallery.innerHTML;
 
       var paused = false;
@@ -850,7 +870,7 @@ src="https://www.facebook.com/tr?id=1575841564147551&ev=PageView&noscript=1"
       gallery.addEventListener('touchstart', pauseAutoScroll, {passive:true});
       gallery.addEventListener('mousedown', pauseAutoScroll);
       gallery.addEventListener('wheel', pauseAutoScroll, {passive:true});
-    })();
+    });
 
     // FAQ accordion
     document.querySelectorAll('.faq-item').forEach(function(item){
