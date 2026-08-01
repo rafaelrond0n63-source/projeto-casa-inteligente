@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "title": "Projeto Rural | +300 Plantas Prontas em PDF"
+  },
+  "timerSeconds": 900,
+  "ticker": {
+    "items": [
+      { "text": "🔥 Oferta expira em", "hasTimer": true },
+      { "text": "🎁 Oferta exclusiva — só hoje", "hasTimer": false },
+      { "text": "📦 +300 plantas completas em PDF", "hasTimer": false },
+      { "text": "⚡ Acesso imediato após a compra", "hasTimer": false }
+    ]
+  },
+  "hero": {
+    "badge": "🎁 OFERTA EXCLUSIVA — SÓ HOJE",
+    "headlineHtml": "<b>Da Casa ao Curral:</b> +120 Projetos de Construções Rurais Para Transformar Seu Sítio, Chácara ou Fazenda",
+    "subheadline": "Currais, baias, galinheiros, galpões, tanques, cercas e muito mais — com plantas, medidas e informações para facilitar o planejamento da construção. Inclui também as +300 plantas de casas prontas em PDF.",
+    "brandHtml": "🏠 <span>PROJETO</span> <span class=\"brand-accent\">RURAL</span>",
+    "ctaText": "QUERO ACESSAR O ACERVO RURAL →",
+    "ctaHref": "#pricing",
+    "subCta": "Acesso imediato. Pagamento único. Sem mensalidade.",
+    "featureBadges": [
+      { "icon": "🏠", "text": "+300 Plantas de Casas" },
+      { "icon": "🐄", "text": "+120 Projetos Rurais" },
+      { "icon": "♾️", "text": "Acesso Vitalício" }
+    ],
+    "heroImg": "assets/capa-projeto-rural.webp",
+    "heroImgAlt": "Projeto Rural - mockup do produto"
+  },
+  "results": {
+    "eyebrow": "Resultados Reais",
+    "headingHtml": "Mais de <span style=\"color:var(--accent)\">15.400 famílias</span> já tiraram a casa própria do papel com nossos projetos.",
+    "images": [
+      { "src": "assets/resultados/casa1.webp", "alt": "Casa de campo construída com nossos projetos" },
+      { "src": "assets/resultados/casa2.webp", "alt": "Casa de campo construída com nossos projetos" },
+      { "src": "assets/resultados/casa3.webp", "alt": "Casa de campo construída com nossos projetos" },
+      { "src": "assets/resultados/casa4.webp", "alt": "Casa de campo construída com nossos projetos" },
+      { "src": "assets/resultados/casa5.webp", "alt": "Casa de campo construída com nossos projetos" }
+    ]
+  },
+  "showcase": {
+    "eyebrow": "Projetos Reais",
+    "heading": "Veja o Tipo de Projeto Profissional que Você Vai Ter em Mãos",
+    "sub": "Iguais a esses, você recebe +300 modelos completos",
+    "images": [
+      { "src": "assets/plantas/planta2.webp", "alt": "Planta baixa profissional com layout completo dos cômodos" },
+      { "src": "assets/plantas/planta3.webp", "alt": "Planta baixa profissional com varanda e área gourmet" },
+      { "src": "assets/plantas/planta4.webp", "alt": "Planta baixa profissional de casa ampla com suíte master" }
+    ],
+    "ctaText": "QUERO ACESSAR AS PLANTAS AGORA →",
+    "ctaHref": "#pricing"
+  },
+  "pain": {
+    "heading": "O Que \"Construir no Improviso\" Custa de Verdade",
+    "sub": "Se você tá pensando em construir sem um projeto pronto, presta atenção nisso:",
+    "bad": {
+      "title": "❌ O Jeito Comum",
+      "items": [
+        "Contratar um arquiteto do zero pode custar de R$1.500 a R$5.000 só pela planta",
+        "Um erro de medida na fundação vira retrabalho — e retrabalho custa caro",
+        "Construir sem projeto aprovado pode significar multa ou embargo da obra",
+        "Sem planejamento elétrico e hidráulico, a reforma depois de pronto sai 3x mais cara"
+      ]
+    },
+    "good": {
+      "title": "✅ O Jeito Inteligente",
+      "items": [
+        "+300 plantas prontas por uma fração do preço de um arquiteto",
+        "Medidas e cálculo estrutural prontos — sem erro de fundação",
+        "Base técnica pronta pra aprovação na prefeitura, sem risco de embargo",
+        "Projeto elétrico e hidráulico incluso desde o início, sem retrabalho depois"
+      ]
+    },
+    "closing": "A verdade é que \"economizar\" no projeto é a forma mais cara de construir."
+  },
+  "whatYouGet": {
+    "eyebrow": "O Que Você Vai Receber",
+    "headingHtml": "Tudo Isso Está no <span style=\"color:var(--green)\">+300 Plantas de Casas</span>",
+    "sub": "Um arsenal técnico completo, desenvolvido pra tirar seu sonho do papel com a segurança de um engenheiro e a economia de quem planeja cada centavo.",
+    "cards": [
+      { "photo": "assets/plantas/planta1.webp", "photoAlt": "Catálogo de plantas", "icon": "📐", "title": "Catálogo de Plantas", "desc": "+300 modelos, de casas rústicas a modernas" },
+      { "photo": "assets/grid/eletrico.webp", "photoAlt": "Planta elétrica e hidráulica", "icon": "⚡", "title": "Planta Baixa, Elétrica e Hidráulica", "desc": "3 plantas técnicas por modelo: medidas, pontos de luz e tubulação completa" },
+      { "photo": "assets/resultados/casa1.webp", "photoAlt": "Projeto 3D humanizado de casa de sítio", "icon": "🧱", "title": "Projeto 3D Humanizado", "desc": "Visualize cada cômodo em 3D fotorrealista antes de construir" },
+      { "photo": "assets/resultados/casa3.webp", "photoAlt": "Visualizador de fachadas de casa de sítio", "icon": "🏠", "title": "Visualizador de Fachadas", "desc": "Imagens realistas da casa pronta, antes do primeiro tijolo" },
+      { "photo": "assets/grid/hidraulico.webp", "photoAlt": "Projeto estrutural", "icon": "🧮", "title": "Estrutural Completo", "desc": "Cálculo técnico de fundações, pilares e vigas" },
+      { "icon": "🧾", "title": "Calculadora de Insumos", "desc": "Lista quantitativa pra comprar exatamente o necessário, sem desperdício" }
+    ]
+  },
+  "acervoRural": {
+    "eyebrow": "Novidade no Acervo",
+    "headingHtml": "Além da Casa, Construa Tudo o Que Sua Propriedade Precisa",
+    "sub": "Tenha acesso a um acervo completo de projetos para organizar, ampliar e valorizar seu sítio, chácara ou fazenda. São estruturas rurais para criação de animais, armazenamento, lazer, produção e manejo da propriedade.",
+    "countBadge": "+120 Projetos Rurais Inclusos",
+    "cards": [
+      { "icon": "🐂", "title": "Currais e Manejo", "desc": "Modelos de currais completos, bretes, corredores, embarcadouros, cochos e áreas de separação." },
+      { "icon": "🐴", "title": "Baias e Cavalariças", "desc": "Projetos de baias individuais, baias maternidade, cocheiras, estábulos e áreas de alimentação." },
+      { "icon": "🐔", "title": "Galinheiros e Aviários", "desc": "Estruturas para diferentes quantidades de aves, com áreas de postura, alimentação e proteção." },
+      { "icon": "🏗️", "title": "Galpões e Depósitos", "desc": "Projetos para guardar ferramentas, insumos, máquinas, implementos agrícolas e materiais." },
+      { "icon": "🐷", "title": "Chiqueiros e Pocilgas", "desc": "Modelos para criação, alimentação, maternidade e separação dos animais." },
+      { "icon": "🐟", "title": "Tanques e Piscicultura", "desc": "Tanques de alvenaria, viveiros, sistemas de abastecimento e áreas de apoio para criação de peixes." },
+      { "icon": "🚧", "title": "Cercas e Corredores", "desc": "Cercas rurais, porteiras, corredores de manejo e divisões internas da propriedade." },
+      { "icon": "🐝", "title": "Apiários e Casas de Apoio", "desc": "Estruturas para colmeias, armazenamento de equipamentos e apoio ao manejo das abelhas." }
+    ],
+    "ctaText": "QUERO ACESSAR O ACERVO RURAL →",
+    "ctaHref": "#pricing"
+  },
+  "ruralPacks": {
+    "eyebrow": "Exclusivo do Plano Completo",
+    "heading": "4 Packs Rurais Organizados por Finalidade",
+    "sub": "Além do acervo de 120 projetos, tudo já vem organizado em packs prontos pra sua necessidade:",
+    "items": [
+      { "tag": "PACK 1", "icon": "🐄", "title": "Pecuária e Manejo", "desc": "Currais, bretes, embarcadouros, cochos, bebedouros, cercas e corredores." },
+      { "tag": "PACK 2", "icon": "🐓", "title": "Criação de Animais", "desc": "Baias, cavalariças, galinheiros, chiqueiros, apriscos e canis rurais." },
+      { "tag": "PACK 3", "icon": "🏗️", "title": "Estruturas e Armazenamento", "desc": "Galpões, depósitos, oficinas, abrigos para máquinas e casas de ferramentas." },
+      { "tag": "PACK 4", "icon": "🌾", "title": "Produção Rural", "desc": "Hortas, estufas, irrigação, tanques de peixe, apiários, composteiras e áreas de apoio." }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Depoimentos Reais",
+    "headingHtml": "Eles Também Tinham <span style=\"color:var(--accent)\">Medo de Errar na Obra...</span>",
+    "subHtml": "Veja o que dizem alguns dos mais de <b>15.400 proprietários</b> que já construíram utilizando nossas plantas.",
+    "items": [
+      { "photo": "assets/resultados/casa2.webp", "stars": "★★★★★", "text": "Eu também tinha medo de errar na obra. Com a planta do Projeto Rural pronta, meu pedreiro nem precisou de engenheiro pra começar.", "avatarInitial": "R", "avatarColor": "#f59e0b", "name": "Roberto S.", "role": "Aposentado — Itaperuna, RJ" },
+      { "photo": "assets/resultados/casa4.webp", "stars": "★★★★★", "text": "Como engenheira, posso afirmar: a qualidade técnica é excepcional. Economizei uns R$3 mil que ia gastar com arquiteto.", "avatarInitial": "C", "avatarColor": "#22c55e", "name": "Camila F.", "role": "Engenheira — Uberlândia, MG" },
+      { "photo": "assets/resultados/casa5.webp", "stars": "★★★★★", "text": "Comprei achando que ia ser só uma planta simples e vieram até o projeto elétrico e hidráulico. Muito mais completo do que eu esperava.", "avatarInitial": "F", "avatarColor": "#38bdf8", "name": "Fernanda A.", "role": "Professora — Caxias do Sul, RS" },
+      { "photo": "assets/resultados/casa1.webp", "stars": "★★★★☆", "text": "Peguei o modelo de casa de campo e adaptei um pouco. Ficou exatamente como eu queria pro meu sítio.", "avatarImg": "assets/avatares/adriano.webp", "name": "Adriano M.", "role": "Produtor Rural — Ponta Grossa, PR" },
+      { "photo": "assets/resultados/casa3.webp", "stars": "★★★★★", "text": "Já tinha comprado planta com engenheiro antes e demorou 3 semanas. Aqui foi na hora, e o guia de aprovação me ajudou a levar direto na prefeitura.", "avatarInitial": "M", "avatarColor": "#a78bfa", "name": "Marcos V.", "role": "Aposentado — Feira de Santana, BA" }
+    ]
+  },
+  "bonuses": {
+    "eyebrow": "Bônus de Hoje",
+    "heading": "Bônus Exclusivos de Hoje",
+    "sub": "Além das +300 plantas, você também leva:",
+    "items": [
+      { "tag": "BÔNUS 1", "title": "Checklist de Materiais de Construção", "desc": "Lista completa pra cotar com o fornecedor sem esquecer nada", "oldPrice": "De R$47,00" },
+      { "tag": "BÔNUS 2", "title": "Planilha de Orçamento de Obra", "desc": "Controle quanto vai gastar em cada etapa da construção", "oldPrice": "De R$67,00" },
+      { "tag": "BÔNUS 3", "title": "Guia de Aprovação na Prefeitura", "desc": "Passo a passo pra dar entrada no seu projeto sem dor de cabeça", "oldPrice": "De R$47,00" },
+      { "tag": "BÔNUS 4", "title": "Catálogo de Fachadas Modernas", "desc": "+50 opções de fachada pra personalizar sua casa", "oldPrice": "De R$37,00" }
+    ],
+    "equation": {
+      "bonusTotalLabel": "Valor total dos bônus",
+      "bonusTotalValue": "R$198,00",
+      "plantsLabel": "+300 Plantas Inclusas",
+      "finalLabel": "Hoje apenas",
+      "finalValue": "R$27,00"
+    }
+  },
+  "pricing": {
+    "eyebrow": "Escolha Seu Plano",
+    "heading": "Escolha Seu Plano",
+    "plans": [
+      {
+        "id": "basico",
+        "featured": false,
+        "name": "Plano Básico",
+        "anchor": "De R$67,00",
+        "price": "R$10,00",
+        "priceNote": "",
+        "savings": "Você economiza R$57,00",
+        "featuresHtml": [
+          "<b>150 plantas</b> em PDF (baixa resolução)",
+          "Sem os 4 bônus",
+          "Garantia de 7 dias"
+        ],
+        "ctaText": "Quero o Básico",
+        "ctaHref": "https://pay.wiapy.com/WUlk4j7RdnEV",
+        "triggersDownsell": true,
+        "buttonStyle": "muted"
+      },
+      {
+        "id": "completo",
+        "featured": true,
+        "badge": "MAIS VENDIDO",
+        "name": "Plano Completo",
+        "anchor": "De R$197,00",
+        "price": "R$27,00",
+        "priceNote": "à vista",
+        "savings": "Você economiza R$170,00 + leva R$198 em bônus grátis + acervo rural completo",
+        "featuresHtml": [
+          "<b>+300 plantas de casas</b> em alta resolução",
+          "Visualização 3D de todas as plantas",
+          "Projeto elétrico e hidráulico incluso",
+          "<b>4 bônus</b> inclusos (R$198 em valor)",
+          "<b>Acervo Rural completo</b> — 120 projetos (currais, baias, galinheiros, galpões e mais)",
+          "<b>4 Packs Rurais</b> complementares inclusos",
+          "Garantia de 7 dias"
+        ],
+        "ctaText": "QUERO O COMPLETO AGORA",
+        "ctaHref": "https://pay.wiapy.com/pxi4yl0lHDvQ",
+        "triggersDownsell": false,
+        "buttonStyle": "primary"
+      }
+    ],
+    "trustBadges": ["🔒 Compra Segura", "♾️ Acesso Vitalício", "🛡️ 7 Dias de Garantia"]
+  },
+  "guarantee": {
+    "seal": "🛡️",
+    "heading": "Risco Zero: Garantia de 7 Dias",
+    "text": "Baixe, analise e teste todas as plantas com calma. Se, por qualquer motivo, você não ficar 100% satisfeito, eu devolvo cada centavo do seu dinheiro — sem perguntas, sem burocracia, sem letra miúda."
+  },
+  "faq": {
+    "heading": "Perguntas Frequentes",
+    "items": [
+      { "q": "Como recebo o material?", "a": "Assim que a compra é aprovada, você recebe o link de acesso na tela e por e-mail, com todas as plantas em PDF pra baixar." },
+      { "q": "Funciona pra qualquer tipo de terreno?", "a": "Sim. Os projetos são organizados por metragem e formato, então você escolhe o modelo compatível com o seu terreno." },
+      { "q": "As plantas servem pra aprovar na prefeitura?", "a": "As plantas são a base técnica do projeto. Pra protocolar na prefeitura, um responsável técnico (engenheiro/arquiteto) precisa assinar — o Bônus 3 te mostra esse passo a passo." },
+      { "q": "Preciso de engenheiro mesmo tendo a planta pronta?", "a": "Pra construir, não necessariamente. Pra assinar o projeto junto à prefeitura, sim — como em qualquer construção." },
+      { "q": "O acesso é vitalício?", "a": "Sim, você acessa e baixa quantas vezes quiser, sem prazo de expiração." },
+      { "q": "E se eu não gostar?", "a": "Você tem 7 dias de garantia incondicional. Não gostou, devolvemos 100% do valor." }
+    ]
+  },
+  "finalCta": {
+    "heading": "Amanhã Esse Preço Não Existe Mais",
+    "text": "Junte-se a mais de 15.400 pessoas que já garantiram seus projetos. R$27 hoje ou milhares de reais de prejuízo com erro de obra amanhã.",
+    "ctaText": "QUERO GARANTIR MEU ACESSO",
+    "ctaHref": "https://pay.wiapy.com/pxi4yl0lHDvQ"
+  },
+  "footerHtml": "Pagamento processado com segurança via Wiapy.<br>Projeto Rural — Todos os direitos reservados © 2026<br><a href=\"#\">Termos de Uso</a> · <a href=\"#\">Política de Privacidade</a> · <a href=\"#\">Contato</a><br><span style=\"opacity:.6\">Foto do painel elétrico: Markus Spiske (CC BY)</span>",
+  "downsellPopup": {
+    "title": "Espera! Antes de você ir...",
+    "textHtml": "Oferta especial só agora: leve o Plano Completo (+300 plantas em alta resolução, 3D, elétrica, hidráulica e os 4 bônus) por apenas <b>R$19,90</b> — em vez de R$27.",
+    "ctaText": "SIM, QUERO POR R$19,90",
+    "ctaHref": "https://pay.wiapy.com/MPcNzfvEC8k",
+    "closeText": "Não, prefiro continuar com o básico"
+  }
+}
