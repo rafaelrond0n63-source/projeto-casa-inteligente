@@ -27,17 +27,6 @@
     "heroImg": "assets/capa-projeto-rural.webp",
     "heroImgAlt": "Projeto Rural - mockup do produto"
   },
-  "results": {
-    "eyebrow": "Resultados Reais",
-    "headingHtml": "Mais de <span style=\"color:var(--accent)\">15.400 famílias</span> já tiraram a casa própria do papel com nossos projetos.",
-    "images": [
-      { "src": "assets/resultados/casa1.webp", "alt": "Casa de campo construída com nossos projetos" },
-      { "src": "assets/resultados/casa2.webp", "alt": "Casa de campo construída com nossos projetos" },
-      { "src": "assets/resultados/casa3.webp", "alt": "Casa de campo construída com nossos projetos" },
-      { "src": "assets/resultados/casa4.webp", "alt": "Casa de campo construída com nossos projetos" },
-      { "src": "assets/resultados/casa5.webp", "alt": "Casa de campo construída com nossos projetos" }
-    ]
-  },
   "showcase": {
     "eyebrow": "Projetos Reais",
     "heading": "Veja o Tipo de Projeto Profissional que Você Vai Ter em Mãos",
@@ -80,16 +69,14 @@
     "cards": [
       { "photo": "assets/plantas/planta1.webp", "photoAlt": "Catálogo de plantas", "icon": "📐", "title": "Catálogo de Plantas", "desc": "+300 modelos, de casas rústicas a modernas" },
       { "photo": "assets/grid/eletrico.webp", "photoAlt": "Planta elétrica e hidráulica", "icon": "⚡", "title": "Planta Baixa, Elétrica e Hidráulica", "desc": "3 plantas técnicas por modelo: medidas, pontos de luz e tubulação completa" },
-      { "photo": "assets/resultados/casa1.webp", "photoAlt": "Projeto 3D humanizado de casa de sítio", "icon": "🧱", "title": "Projeto 3D Humanizado", "desc": "Visualize cada cômodo em 3D fotorrealista antes de construir" },
-      { "photo": "assets/resultados/casa3.webp", "photoAlt": "Visualizador de fachadas de casa de sítio", "icon": "🏠", "title": "Visualizador de Fachadas", "desc": "Imagens realistas da casa pronta, antes do primeiro tijolo" },
       { "photo": "assets/grid/hidraulico.webp", "photoAlt": "Projeto estrutural", "icon": "🧮", "title": "Estrutural Completo", "desc": "Cálculo técnico de fundações, pilares e vigas" },
       { "icon": "🧾", "title": "Calculadora de Insumos", "desc": "Lista quantitativa pra comprar exatamente o necessário, sem desperdício" }
     ]
   },
   "acervoRural": {
     "eyebrow": "Novidade no Acervo",
-    "headingHtml": "Além da Casa, Construa Tudo o Que Sua Propriedade Precisa",
-    "sub": "Tenha acesso a um acervo completo de projetos para organizar, ampliar e valorizar seu sítio, chácara ou fazenda. São estruturas rurais para criação de animais, armazenamento, lazer, produção e manejo da propriedade.",
+    "headingHtml": "Além da Casa: Tudo o Que Seu Sítio, Chácara ou Fazenda Precisa",
+    "sub": "Um acervo completo pra organizar, ampliar e valorizar sua propriedade — currais, galpões, galinheiros e muito mais, prontos pra criação de animais, armazenamento, produção e manejo rural.",
     "countBadge": "+120 Projetos Rurais Inclusos",
     "cards": [
       { "icon": "🐂", "title": "Currais e Manejo", "desc": "Modelos de currais completos, bretes, corredores, embarcadouros, cochos e áreas de separação." },
@@ -133,11 +120,11 @@
     "headingHtml": "Eles Também Tinham <span style=\"color:var(--accent)\">Medo de Errar na Obra...</span>",
     "subHtml": "Veja o que dizem alguns dos mais de <b>15.400 proprietários</b> que já construíram utilizando nossas plantas.",
     "items": [
-      { "photo": "assets/resultados/casa2.webp", "stars": "★★★★★", "text": "Eu também tinha medo de errar na obra. Com a planta do Projeto Rural pronta, meu pedreiro nem precisou de engenheiro pra começar.", "avatarInitial": "R", "avatarColor": "#f59e0b", "name": "Roberto S.", "role": "Aposentado — Itaperuna, RJ" },
-      { "photo": "assets/resultados/casa4.webp", "stars": "★★★★★", "text": "Como engenheira, posso afirmar: a qualidade técnica é excepcional. Economizei uns R$3 mil que ia gastar com arquiteto.", "avatarInitial": "C", "avatarColor": "#22c55e", "name": "Camila F.", "role": "Engenheira — Uberlândia, MG" },
-      { "photo": "assets/resultados/casa5.webp", "stars": "★★★★★", "text": "Comprei achando que ia ser só uma planta simples e vieram até o projeto elétrico e hidráulico. Muito mais completo do que eu esperava.", "avatarInitial": "F", "avatarColor": "#38bdf8", "name": "Fernanda A.", "role": "Professora — Caxias do Sul, RS" },
-      { "photo": "assets/resultados/casa1.webp", "stars": "★★★★☆", "text": "Peguei o modelo de casa de campo e adaptei um pouco. Ficou exatamente como eu queria pro meu sítio.", "avatarImg": "assets/avatares/adriano.webp", "name": "Adriano M.", "role": "Produtor Rural — Ponta Grossa, PR" },
-      { "photo": "assets/resultados/casa3.webp", "stars": "★★★★★", "text": "Já tinha comprado planta com engenheiro antes e demorou 3 semanas. Aqui foi na hora, e o guia de aprovação me ajudou a levar direto na prefeitura.", "avatarInitial": "M", "avatarColor": "#a78bfa", "name": "Marcos V.", "role": "Aposentado — Feira de Santana, BA" }
+      { "stars": "★★★★★", "text": "Eu também tinha medo de errar na obra. Com a planta do Projeto Rural pronta, meu pedreiro nem precisou de engenheiro pra começar.", "avatarInitial": "R", "avatarColor": "#f59e0b", "name": "Roberto S.", "role": "Aposentado — Itaperuna, RJ" },
+      { "stars": "★★★★★", "text": "Como engenheira, posso afirmar: a qualidade técnica é excepcional. Economizei uns R$3 mil que ia gastar com arquiteto.", "avatarInitial": "C", "avatarColor": "#22c55e", "name": "Camila F.", "role": "Engenheira — Uberlândia, MG" },
+      { "stars": "★★★★★", "text": "Comprei achando que ia ser só uma planta simples e vieram até o projeto elétrico e hidráulico. Muito mais completo do que eu esperava.", "avatarInitial": "F", "avatarColor": "#38bdf8", "name": "Fernanda A.", "role": "Professora — Caxias do Sul, RS" },
+      { "stars": "★★★★☆", "text": "Peguei o modelo de casa de campo e adaptei um pouco. Ficou exatamente como eu queria pro meu sítio.", "avatarImg": "assets/avatares/adriano.webp", "name": "Adriano M.", "role": "Produtor Rural — Ponta Grossa, PR" },
+      { "stars": "★★★★★", "text": "Já tinha comprado planta com engenheiro antes e demorou 3 semanas. Aqui foi na hora, e o guia de aprovação me ajudou a levar direto na prefeitura.", "avatarInitial": "M", "avatarColor": "#a78bfa", "name": "Marcos V.", "role": "Aposentado — Feira de Santana, BA" }
     ],
     "galleryHeading": "Prints Reais de Quem Já Comprou",
     "gallery": [

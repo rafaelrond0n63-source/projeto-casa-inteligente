@@ -152,19 +152,7 @@
   section .section-sub{color:var(--text-muted); margin-bottom:20px; font-size:15px;}
   .divider{height:1px; background:var(--border); margin:0;}
 
-  /* RESULTADOS REAIS */
-  .results-gallery{
-    display:flex; gap:12px; overflow-x:auto; margin:20px -20px 0; padding:4px 20px 8px;
-    -webkit-overflow-scrolling:touch; scrollbar-width:none;
-  }
-  .results-gallery::-webkit-scrollbar{display:none;}
-  .results-gallery img{
-    flex:0 0 78%;
-    height:220px; object-fit:cover; border-radius:14px;
-    box-shadow:var(--card-shadow);
-  }
-
-  /* GALERIAS AUTO-SCROLL (provas sociais / acervo) - mesmo mecanismo dos Resultados Reais */
+  /* GALERIAS AUTO-SCROLL (provas sociais / acervo) */
   .hscroll-gallery{
     display:flex; gap:12px; overflow-x:auto; margin:20px -20px 0; padding:4px 20px 8px;
     -webkit-overflow-scrolling:touch; scrollbar-width:none;
@@ -243,11 +231,6 @@
     border-radius:12px; padding:16px; margin-bottom:12px;
     box-shadow:var(--card-shadow);
   }
-  .testimonial.has-photo{padding:0; overflow:hidden;}
-  .testimonial.has-photo .photo{
-    width:100%; height:130px; object-fit:cover; border-radius:0; margin-bottom:0;
-  }
-  .testimonial.has-photo .card-body{padding:14px 16px 16px;}
   .testimonial .stars{color:var(--accent); margin-bottom:8px; font-size:14px;}
   .testimonial p{font-size:14px; margin-bottom:10px;}
   .testimonial .author-row{display:flex; align-items:center; gap:10px; padding-top:10px; border-top:1px solid var(--border);}
@@ -386,8 +369,6 @@
     .subheadline{font-size:19px;}
     .feature-badges{justify-content:center;}
 
-    .results-gallery{margin:24px 0 0;}
-    .results-gallery img{flex:0 0 320px; height:220px;}
     .hscroll-gallery{margin:24px 0 0;}
     .hscroll-gallery.social-proof img{flex:0 0 240px; height:340px;}
     .hscroll-gallery.acervo img{flex:0 0 380px; height:266px;}
@@ -437,11 +418,6 @@
 
   <!-- 2/3. HERO -->
   <section class="hero" id="section-hero"></section>
-
-  <div class="divider"></div>
-
-  <!-- 3.5 RESULTADOS REAIS -->
-  <section id="section-results"></section>
 
   <div class="divider"></div>
 
@@ -562,16 +538,6 @@ src="https://www.facebook.com/tr?id=1575841564147551&ev=PageView&noscript=1"
     `;
   }
 
-  function resultsHtml(r){
-    return `
-      <span class="eyebrow">${r.eyebrow}</span>
-      <h2 style="text-align:center;">${r.headingHtml}</h2>
-      <div class="results-gallery auto-scroll">
-        ${r.images.map(img => `<img src="${img.src}" alt="${img.alt}">`).join('')}
-      </div>
-    `;
-  }
-
   function showcaseHtml(s){
     return `
       <span class="eyebrow">${s.eyebrow}</span>
@@ -676,17 +642,14 @@ src="https://www.facebook.com/tr?id=1575841564147551&ev=PageView&noscript=1"
         ? `<div class="avatar avatar-img"><img src="${i.avatarImg}" alt="${i.name}"></div>`
         : `<div class="avatar" style="background:${i.avatarColor};">${i.avatarInitial}</div>`;
       return `
-        <div class="testimonial has-photo">
-          <img class="photo" src="${i.photo}" alt="">
-          <div class="card-body">
-            <div class="stars">${i.stars}</div>
-            <p>"${i.text}"</p>
-            <div class="author-row">
-              ${avatar}
-              <div class="author-info">
-                <div class="author-name">${i.name}</div>
-                <div class="author">${i.role}</div>
-              </div>
+        <div class="testimonial">
+          <div class="stars">${i.stars}</div>
+          <p>"${i.text}"</p>
+          <div class="author-row">
+            ${avatar}
+            <div class="author-info">
+              <div class="author-name">${i.name}</div>
+              <div class="author">${i.role}</div>
             </div>
           </div>
         </div>`;
@@ -809,7 +772,6 @@ src="https://www.facebook.com/tr?id=1575841564147551&ev=PageView&noscript=1"
     document.title = c.meta.title;
     document.getElementById('ticker-track').innerHTML = tickerHtml(c.ticker);
     document.getElementById('section-hero').innerHTML = heroHtml(c.hero);
-    document.getElementById('section-results').innerHTML = resultsHtml(c.results);
     document.getElementById('section-showcase').innerHTML = showcaseHtml(c.showcase);
     document.getElementById('section-pain').innerHTML = painHtml(c.pain);
     document.getElementById('section-what-you-get').innerHTML = whatYouGetHtml(c.whatYouGet);
