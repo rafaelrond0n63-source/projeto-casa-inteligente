@@ -161,7 +161,6 @@
   .hscroll-gallery img{
     border-radius:14px; box-shadow:var(--card-shadow); flex-shrink:0;
   }
-  .hscroll-gallery.social-proof img{ flex:0 0 200px; height:290px; object-fit:cover; object-position:top; }
   .hscroll-gallery.acervo img{ flex:0 0 300px; height:210px; object-fit:cover; }
 
   /* O QUE VOCE RECEBE */
@@ -176,30 +175,7 @@
   .grid-card h3{font-size:15px; margin-bottom:4px;}
   .grid-card p{font-size:13px; color:var(--text-muted);}
 
-  /* PROVA SOCIAL */
-  .testimonial{
-    background:var(--bg-card); border:1px solid var(--border);
-    border-radius:12px; padding:16px; margin-bottom:12px;
-    box-shadow:var(--card-shadow);
-  }
-  .testimonial .stars{color:var(--accent); margin-bottom:8px; font-size:14px;}
-  .testimonial p{font-size:14px; margin-bottom:10px;}
-  .testimonial .author-row{display:flex; align-items:center; gap:10px; padding-top:10px; border-top:1px solid var(--border);}
-  .testimonial .avatar{
-    width:34px; height:34px; border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:14px;
-    color:#ffffff; flex-shrink:0;
-  }
-  .testimonial .avatar.avatar-img{padding:0; overflow:hidden; background:none;}
-  .testimonial .avatar.avatar-img img{
-    width:100%; height:100%; object-fit:cover; border-radius:50%; display:block;
-  }
-  .testimonial .author-info{line-height:1.3;}
-  .testimonial .author-name{font-size:13px; color:var(--green); font-weight:700;}
-  .testimonial .author{font-size:12px; color:var(--text-muted); font-weight:500;}
-
-  /* BONUS */
+  /* BONUS (usado pelos Packs Rurais) */
   .bonus-card{
     background:linear-gradient(135deg, var(--bg-card), var(--bg-card-2));
     border:1px solid var(--accent); border-radius:12px;
@@ -212,19 +188,6 @@
   }
   .bonus-card h3{font-size:16px; margin-bottom:4px;}
   .bonus-card p{font-size:13px; color:var(--text-muted); margin-bottom:8px;}
-  .bonus-card .old-price{text-decoration:line-through; color:var(--text-muted); font-size:13px;}
-
-  /* BARRA DE EQUACAO DOS BONUS */
-  .equation-bar{
-    display:flex; flex-direction:column; align-items:center; gap:10px;
-    text-align:center; margin-top:20px;
-    padding:20px; background:var(--bg-card-2); border:1px solid var(--border); border-radius:14px;
-  }
-  .equation-bar .eq-item{display:flex; flex-direction:column; gap:2px;}
-  .equation-bar .eq-label{font-size:12px; color:var(--text-muted); text-transform:uppercase; letter-spacing:.04em;}
-  .equation-bar .eq-value{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:20px;}
-  .equation-bar .eq-op{color:var(--text-muted); font-size:18px; font-weight:700;}
-  .equation-bar .eq-final .eq-value{color:var(--green); font-size:26px;}
 
   /* PRICING */
   .plans{display:flex; flex-direction:column; gap:16px;}
@@ -321,7 +284,6 @@
     .feature-badges{justify-content:center;}
 
     .hscroll-gallery{margin:24px 0 0;}
-    .hscroll-gallery.social-proof img{flex:0 0 240px; height:340px;}
     .hscroll-gallery.acervo img{flex:0 0 380px; height:266px;}
 
     section{padding:48px 0;}
@@ -331,10 +293,6 @@
 
     .bonus-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
     .bonus-card{margin-bottom:0;}
-    .equation-bar{flex-direction:row; justify-content:center; gap:24px; padding:24px 32px;}
-
-    .testimonials-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;}
-    .testimonial{margin-bottom:0;}
 
     .plans{flex-direction:row; align-items:stretch;}
     .plan{flex:1;}
@@ -363,16 +321,6 @@
 
   <!-- 5.5 ACERVO RURAL -->
   <section id="section-acervo-rural"></section>
-
-  <div class="divider"></div>
-
-  <!-- 6. PROVA SOCIAL -->
-  <section id="section-testimonials"></section>
-
-  <div class="divider"></div>
-
-  <!-- 7. BONUS -->
-  <section id="section-bonuses"></section>
 
   <div class="divider"></div>
 
@@ -503,70 +451,6 @@ src="https://www.facebook.com/tr?id=1575841564147551&ev=PageView&noscript=1"
     `;
   }
 
-  function testimonialsHtml(t){
-    function item(i){
-      const avatar = i.avatarImg
-        ? `<div class="avatar avatar-img"><img src="${i.avatarImg}" alt="${i.name}"></div>`
-        : `<div class="avatar" style="background:${i.avatarColor};">${i.avatarInitial}</div>`;
-      return `
-        <div class="testimonial">
-          <div class="stars">${i.stars}</div>
-          <p>"${i.text}"</p>
-          <div class="author-row">
-            ${avatar}
-            <div class="author-info">
-              <div class="author-name">${i.name}</div>
-              <div class="author">${i.role}</div>
-            </div>
-          </div>
-        </div>`;
-    }
-    return `
-      <span class="eyebrow">${t.eyebrow}</span>
-      <h2>${t.headingHtml}</h2>
-      <p class="section-sub">${t.subHtml}</p>
-      <div class="testimonials-grid">${t.items.map(item).join('')}</div>
-      <h3 style="margin-top:28px; font-size:17px;">${t.galleryHeading}</h3>
-      <div class="hscroll-gallery social-proof auto-scroll">
-        ${t.gallery.map(img => `<img src="${img.src}" alt="${img.alt}">`).join('')}
-      </div>
-    `;
-  }
-
-  function bonusesHtml(b){
-    function item(i){
-      return `
-        <div class="bonus-card">
-          <span class="bonus-tag">${i.tag}</span>
-          <h3>${i.title}</h3>
-          <p>${i.desc}</p>
-          <span class="old-price">${i.oldPrice}</span>
-        </div>`;
-    }
-    const eq = b.equation;
-    return `
-      <span class="eyebrow">${b.eyebrow}</span>
-      <h2>${b.heading}</h2>
-      <p class="section-sub">${b.sub}</p>
-      <div class="bonus-grid">${b.items.map(item).join('')}</div>
-      <div class="equation-bar">
-        <div class="eq-item">
-          <span class="eq-label">${eq.bonusTotalLabel}</span>
-          <span class="eq-value">${eq.bonusTotalValue}</span>
-        </div>
-        <span class="eq-op">+</span>
-        <div class="eq-item">
-          <span class="eq-label">${eq.plantsLabel}</span>
-        </div>
-        <span class="eq-op">=</span>
-        <div class="eq-item eq-final">
-          <span class="eq-label">${eq.finalLabel}</span>
-          <span class="eq-value">${eq.finalValue}</span>
-        </div>
-      </div>
-    `;
-  }
-
   function pricingHtml(pr){
     function plan(p){
       const btnStyle = p.buttonStyle === 'muted' ? ' style="background:var(--bg-card-2); color:var(--text); box-shadow:none;"' : '';
@@ -640,8 +524,6 @@ src="https://www.facebook.com/tr?id=1575841564147551&ev=PageView&noscript=1"
     document.getElementById('ticker-track').innerHTML = tickerHtml(c.ticker);
     document.getElementById('section-hero').innerHTML = heroHtml(c.hero);
     document.getElementById('section-acervo-rural').innerHTML = acervoRuralHtml(c.acervoRural);
-    document.getElementById('section-testimonials').innerHTML = testimonialsHtml(c.testimonials);
-    document.getElementById('section-bonuses').innerHTML = bonusesHtml(c.bonuses);
     document.getElementById('section-rural-packs').innerHTML = ruralPacksHtml(c.ruralPacks);
     document.getElementById('pricing').innerHTML = pricingHtml(c.pricing);
     document.getElementById('section-guarantee').innerHTML = guaranteeHtml(c.guarantee);
