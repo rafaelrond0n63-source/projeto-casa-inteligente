@@ -58,6 +58,16 @@
       { "src": "assets/acervo/acervo10.webp", "alt": "Pack 01 Pecuária e Manejo - estruturas completas" }
     ]
   },
+  "socialProof": {
+    "headingHtml": "Mais de <span style=\"color:var(--accent)\">4.800 Produtores Rurais</span> Já Estão Construindo com Segurança",
+    "gallery": [
+      { "src": "assets/depoimentos/rr1.webp", "alt": "Print de conversa no WhatsApp sobre o Projeto Rural" },
+      { "src": "assets/depoimentos/rr2.webp", "alt": "Print de conversa no WhatsApp sobre o Projeto Rural" },
+      { "src": "assets/depoimentos/rr3.webp", "alt": "Print de conversa no WhatsApp sobre o Projeto Rural" },
+      { "src": "assets/depoimentos/rr4.webp", "alt": "Print de conversa no WhatsApp sobre o Projeto Rural" },
+      { "src": "assets/depoimentos/rr5.webp", "alt": "Print de conversa no WhatsApp sobre o Projeto Rural" }
+    ]
+  },
   "ruralPacks": {
     "eyebrow": "Exclusivo do Plano Completo",
     "heading": "4 Packs Rurais Organizados por Finalidade",

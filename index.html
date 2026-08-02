@@ -163,6 +163,7 @@
     border-radius:14px; box-shadow:var(--card-shadow); flex-shrink:0;
   }
   .hscroll-gallery.acervo img{ flex:0 0 300px; height:210px; object-fit:cover; }
+  .hscroll-gallery.social-proof img{ flex:0 0 200px; height:290px; object-fit:cover; object-position:top; }
 
   /* O QUE VOCE RECEBE */
   .grid{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
@@ -288,6 +289,7 @@
 
     .hscroll-gallery{margin:24px 0 0;}
     .hscroll-gallery.acervo img{flex:0 0 380px; height:266px;}
+    .hscroll-gallery.social-proof img{flex:0 0 240px; height:340px;}
 
     section{padding:48px 0;}
     section h2{font-size:28px;}
@@ -324,6 +326,11 @@
 
   <!-- 5.5 ACERVO RURAL -->
   <section id="section-acervo-rural"></section>
+
+  <div class="divider"></div>
+
+  <!-- 6. PROVA SOCIAL -->
+  <section id="section-social-proof"></section>
 
   <div class="divider"></div>
 
@@ -437,6 +444,15 @@ src="https://www.facebook.com/tr?id=1575841564147551&ev=PageView&noscript=1"
     `;
   }
 
+  function socialProofHtml(s){
+    return `
+      <h2 style="text-align:center;">${s.headingHtml}</h2>
+      <div class="hscroll-gallery social-proof auto-scroll">
+        ${s.gallery.map(img => `<img src="${img.src}" alt="${img.alt}">`).join('')}
+      </div>
+    `;
+  }
+
   function ruralPacksHtml(rp){
     function item(i){
       return `
@@ -527,6 +543,7 @@ src="https://www.facebook.com/tr?id=1575841564147551&ev=PageView&noscript=1"
     document.getElementById('ticker-track').innerHTML = tickerHtml(c.ticker);
     document.getElementById('section-hero').innerHTML = heroHtml(c.hero);
     document.getElementById('section-acervo-rural').innerHTML = acervoRuralHtml(c.acervoRural);
+    document.getElementById('section-social-proof').innerHTML = socialProofHtml(c.socialProof);
     document.getElementById('section-rural-packs').innerHTML = ruralPacksHtml(c.ruralPacks);
     document.getElementById('pricing').innerHTML = pricingHtml(c.pricing);
     document.getElementById('section-guarantee').innerHTML = guaranteeHtml(c.guarantee);
