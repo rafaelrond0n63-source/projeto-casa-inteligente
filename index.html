@@ -74,6 +74,7 @@
   /* HERO */
   .hero{padding:32px 0 24px; position:relative;}
   .hero-media{margin-top:20px;}
+  .hero-media .cta-btn{margin-top:4px;}
   .badge{
     display:inline-block;
     background:var(--bg-card-2);
@@ -279,6 +280,8 @@
     .hero{padding:56px 0 64px;}
     .hero-media{margin-top:32px; text-align:center;}
     .hero-media .hero-img{display:inline-block; max-width:520px;}
+    .hero-media .cta-btn{max-width:520px; margin-left:auto; margin-right:auto;}
+    .hero-media .sub-cta{max-width:520px; margin-left:auto; margin-right:auto;}
     .headline{font-size:52px;}
     .subheadline{font-size:19px;}
     .feature-badges{justify-content:center;}
@@ -395,14 +398,14 @@ src="https://www.facebook.com/tr?id=1575841564147551&ev=PageView&noscript=1"
         <h1 class="headline">${h.headlineHtml}</h1>
         <p class="subheadline">${h.subheadline}</p>
         <div class="brand">${h.brandHtml}</div>
-        <a href="${h.ctaHref}" class="cta-btn">${h.ctaText}</a>
-        <p class="sub-cta">${h.subCta}</p>
         <div class="feature-badges">
           ${h.featureBadges.map(fb => `<span class="fb"><span class="fb-icon">${fb.icon}</span> ${fb.text}</span>`).join('')}
         </div>
       </div>
       <div class="hero-media">
         <img class="hero-img" src="${h.heroImg}" alt="${h.heroImgAlt}">
+        <a href="${h.ctaHref}" class="cta-btn">${h.ctaText}</a>
+        <p class="sub-cta">${h.subCta}</p>
         <div class="scroll-hint">
           <span>Role para baixo</span>
           <span class="chevron">⌄</span>
