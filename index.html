@@ -164,30 +164,6 @@
   .hscroll-gallery.social-proof img{ flex:0 0 200px; height:290px; object-fit:cover; object-position:top; }
   .hscroll-gallery.acervo img{ flex:0 0 300px; height:210px; object-fit:cover; }
 
-  /* DOR */
-  .pain-list{list-style:none; margin-bottom:16px;}
-  .pain-list li{
-    display:flex; gap:10px; align-items:flex-start;
-    background:var(--bg-card); border:1px solid var(--border);
-    border-radius:10px; padding:14px; margin-bottom:10px; font-size:15px;
-    box-shadow:var(--card-shadow);
-  }
-  .pain-list li .x{color:#f87171; font-weight:700;}
-  .pain-close{font-weight:600; color:var(--text); font-size:16px; margin-top:14px;}
-
-  /* COMPARATIVO JEITO COMUM x JEITO INTELIGENTE */
-  .compare-grid{display:flex; flex-direction:column; gap:14px; margin-bottom:16px;}
-  .compare-col{
-    border-radius:12px; padding:16px; box-shadow:var(--card-shadow); border:1px solid var(--border);
-  }
-  .compare-col h3{font-size:15px; margin-bottom:10px;}
-  .compare-col ul{list-style:none;}
-  .compare-col li{font-size:14px; padding:6px 0; line-height:1.4; color:var(--text-muted);}
-  .compare-bad{background:rgba(239,68,68,.08); border-color:rgba(239,68,68,.3);}
-  .compare-bad h3{color:#f87171;}
-  .compare-good{background:rgba(74,222,128,.08); border-color:rgba(74,222,128,.3);}
-  .compare-good h3{color:var(--green);}
-
   /* O QUE VOCE RECEBE */
   .grid{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
   .grid-card{
@@ -351,12 +327,6 @@
     section{padding:48px 0;}
     section h2{font-size:28px;}
 
-    .pain-list{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
-    .pain-list li{margin-bottom:0;}
-
-    .compare-grid{flex-direction:row;}
-    .compare-col{flex:1;}
-
     .grid{grid-template-columns:repeat(3, 1fr);}
 
     .bonus-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
@@ -388,11 +358,6 @@
 
   <!-- 2/3. HERO -->
   <section class="hero" id="section-hero"></section>
-
-  <div class="divider"></div>
-
-  <!-- 4. DOR -->
-  <section id="section-pain"></section>
 
   <div class="divider"></div>
 
@@ -495,24 +460,6 @@ src="https://www.facebook.com/tr?id=1575841564147551&ev=PageView&noscript=1"
           <span class="chevron">⌄</span>
         </div>
       </div>
-    `;
-  }
-
-  function painHtml(p){
-    return `
-      <h2>${p.heading}</h2>
-      <p class="section-sub">${p.sub}</p>
-      <div class="compare-grid">
-        <div class="compare-col compare-bad">
-          <h3>${p.bad.title}</h3>
-          <ul>${p.bad.items.map(i => `<li>${i}</li>`).join('')}</ul>
-        </div>
-        <div class="compare-col compare-good">
-          <h3>${p.good.title}</h3>
-          <ul>${p.good.items.map(i => `<li>${i}</li>`).join('')}</ul>
-        </div>
-      </div>
-      <p class="pain-close">${p.closing}</p>
     `;
   }
 
@@ -692,7 +639,6 @@ src="https://www.facebook.com/tr?id=1575841564147551&ev=PageView&noscript=1"
     document.title = c.meta.title;
     document.getElementById('ticker-track').innerHTML = tickerHtml(c.ticker);
     document.getElementById('section-hero').innerHTML = heroHtml(c.hero);
-    document.getElementById('section-pain').innerHTML = painHtml(c.pain);
     document.getElementById('section-acervo-rural').innerHTML = acervoRuralHtml(c.acervoRural);
     document.getElementById('section-testimonials').innerHTML = testimonialsHtml(c.testimonials);
     document.getElementById('section-bonuses').innerHTML = bonusesHtml(c.bonuses);
