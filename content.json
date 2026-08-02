@@ -27,18 +27,6 @@
     "heroImg": "assets/capa-projeto-rural.webp",
     "heroImgAlt": "Projeto Rural - mockup do produto"
   },
-  "showcase": {
-    "eyebrow": "Projetos Reais",
-    "heading": "Veja o Tipo de Projeto Profissional que Você Vai Ter em Mãos",
-    "sub": "Iguais a esses, você recebe +300 modelos completos",
-    "images": [
-      { "src": "assets/plantas/planta2.webp", "alt": "Planta baixa profissional com layout completo dos cômodos" },
-      { "src": "assets/plantas/planta3.webp", "alt": "Planta baixa profissional com varanda e área gourmet" },
-      { "src": "assets/plantas/planta4.webp", "alt": "Planta baixa profissional de casa ampla com suíte master" }
-    ],
-    "ctaText": "QUERO ACESSAR AS PLANTAS AGORA →",
-    "ctaHref": "#pricing"
-  },
   "pain": {
     "heading": "O Que \"Construir no Improviso\" Custa de Verdade",
     "sub": "Se você tá pensando em construir sem um projeto pronto, presta atenção nisso:",
@@ -61,17 +49,6 @@
       ]
     },
     "closing": "A verdade é que \"economizar\" no projeto é a forma mais cara de construir."
-  },
-  "whatYouGet": {
-    "eyebrow": "O Que Você Vai Receber",
-    "headingHtml": "Tudo Isso Está no <span style=\"color:var(--green)\">+300 Plantas de Casas</span>",
-    "sub": "Um arsenal técnico completo, desenvolvido pra tirar seu sonho do papel com a segurança de um engenheiro e a economia de quem planeja cada centavo.",
-    "cards": [
-      { "photo": "assets/plantas/planta1.webp", "photoAlt": "Catálogo de plantas", "icon": "📐", "title": "Catálogo de Plantas", "desc": "+300 modelos, de casas rústicas a modernas" },
-      { "photo": "assets/grid/eletrico.webp", "photoAlt": "Planta elétrica e hidráulica", "icon": "⚡", "title": "Planta Baixa, Elétrica e Hidráulica", "desc": "3 plantas técnicas por modelo: medidas, pontos de luz e tubulação completa" },
-      { "photo": "assets/grid/hidraulico.webp", "photoAlt": "Projeto estrutural", "icon": "🧮", "title": "Estrutural Completo", "desc": "Cálculo técnico de fundações, pilares e vigas" },
-      { "icon": "🧾", "title": "Calculadora de Insumos", "desc": "Lista quantitativa pra comprar exatamente o necessário, sem desperdício" }
-    ]
   },
   "acervoRural": {
     "eyebrow": "Novidade no Acervo",
